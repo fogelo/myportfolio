@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import aboutPhoto from "../img/about-photo.jpeg"
+import PrimaryButton from "./PrimaryButton";
 
 const ImageSection = () => {
     return (
@@ -32,16 +33,18 @@ const ImageSection = () => {
                         <p>: Freelance</p>
                     </div>
                 </div>
+                <PrimaryButton title={"Download CV"}/>
             </div>
         </ImageSectionStyled>
     );
 };
 
 
-const ImageSectionStyled = styled.div`
+const ImageSectionStyled = styled.section`
   display: flex;
   margin-top: 5rem;
-
+  position: relative;
+  z-index: 1;
   .left-content {
     width: 100%;
     margin: 0 .8rem;
@@ -78,7 +81,7 @@ const ImageSectionStyled = styled.div`
         padding-right: 3rem;
 
         p {
-            font-weight: 600;
+          font-weight: 600;
         }
       }
 
