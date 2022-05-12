@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Sidebar from "./Components/Sidebar";
 import HomePage from "./Pages/HomePage";
-import Particles from "./Components/Particles";
+import {Routes, Route} from "react-router-dom";
+import AboutPage from "./Pages/AboutPage";
+import ResumePage from "./Pages/ResumePage";
+import PortfoliosPage from "./Pages/PortfoliosPage";
+import BlogsPage from "./Pages/BlogsPage";
+import ContactsPage from "./Pages/ContactsPage";
 
 function App() {
     return (
@@ -16,7 +21,17 @@ function App() {
                     <div className="lines-3"/>
                     <div className="lines-4"/>
                 </div>
-                <HomePage/>
+                <Routes>
+                    <Route path={'/'} element={<HomePage/>}/>
+                    <Route path={'/about'} element={<AboutPage/>}/>
+                    <Route path={'/resume'} element={<ResumePage/>}/>
+                    <Route path={'/portfolios'} element={<PortfoliosPage/>}/>
+                    <Route path={'/blogs'} element={<BlogsPage/>}/>
+                    <Route path={'/contacts'} element={<ContactsPage/>}/>
+                </Routes>
+
+
+
             </MainContentStyled>
 
 

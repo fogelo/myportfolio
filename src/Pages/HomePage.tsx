@@ -18,9 +18,9 @@ const HomePage = () => {
                     mollitia numquam quas qui quis quod voluptatibus!
                 </p>
                 <div className={"icons"}>
-                    <div className="icon i-telegram"><TelegramIcon/></div>
-                    <div className="icon i-github"><GitHubIcon/></div>
-                    <div className="icon i-vk"><Icon32LogoVk/></div>
+                    <a href={'https://t.me/ant_or'} className="icon i-telegram"><TelegramIcon/></a>
+                    <a href={'https://github.com/fogelo'} className="icon i-github"><GitHubIcon/></a>
+                    <a href={'https://vk.com/id715020392'} className="icon i-vk"><Icon32LogoVk/></a>
                 </div>
             </div>
         </HomePageStyled>
@@ -61,7 +61,7 @@ const HomePageStyled = styled.header`
         padding: 0.5rem;
         border-radius: 50%;
         cursor: pointer;
-        
+        transition: all .3s ease-in-out ;
         &:hover {
           border: 2px solid var(--primary-color);
           color: var(--primary-color);
