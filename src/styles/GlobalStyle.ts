@@ -53,6 +53,19 @@ const GlobalStyle = createGlobalStyle`
   span {
     color: var(--primary-color);
   }
+  
+  p {
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  input {
+    color: inherit;
+  }
+  textarea {
+    color: inherit;
+  }
 `
 
 export default GlobalStyle

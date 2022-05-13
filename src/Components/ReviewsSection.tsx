@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Title from "./Title";
 import {InnerLayout} from "../styles/Layouts";
-import ReviewsCard from "./ReviewsCard";
+import ReviewCard from "./ReviewCard";
 
 const ReviewsSection = () => {
     return (
@@ -10,9 +10,9 @@ const ReviewsSection = () => {
             <Title title={"Reviews"} span={"reviews"}/>
             <InnerLayout>
                 <div className={"reviews"}>
-                    <ReviewsCard
+                    <ReviewCard
                         text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. A labore nostrum, praesentium sunt tempore velit"}/>
-                    <ReviewsCard
+                    <ReviewCard
                         text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. A labore nostrum, praesentium sunt tempore velit. Lorem ipsum dolor sit amet."}/>
                 </div>
             </InnerLayout>

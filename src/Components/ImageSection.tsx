@@ -33,7 +33,9 @@ const ImageSection = () => {
                         <p>: Freelance</p>
                     </div>
                 </div>
-                <PrimaryButton title={"Download CV"}/>
+                <div className={'download-cv-btn'}>
+                    <PrimaryButton title={"Download CV"}/>
+                </div>
             </div>
         </ImageSectionStyled>
     );
@@ -97,7 +99,9 @@ const ImageSectionStyled = styled.section`
         }
       }
     }
-
+    .download-cv-btn {
+      margin-top: 30px;
+    }
 
   }
 

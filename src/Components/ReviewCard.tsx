@@ -5,7 +5,7 @@ type ReviewsCardPT = {
     text: string
 }
 
-const ReviewsCard: FC<ReviewsCardPT> = ({text}) => {
+const ReviewCard: FC<ReviewsCardPT> = ({text}) => {
     return (
         <ReviewsCardStyled>
             <p>{text}</p>
@@ -26,4 +26,4 @@ const ReviewsCardStyled = styled.div`
   }
 `
 
-export default ReviewsCard;
+export default ReviewCard;
