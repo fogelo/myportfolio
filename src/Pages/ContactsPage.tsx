@@ -3,8 +3,15 @@ import {InnerLayout, MainLayout} from "../styles/Layouts";
 import Title from "../Components/Title";
 import styled from "styled-components";
 import PrimaryButton from "../Components/PrimaryButton";
+import ContactCard from "../Components/ContactCard";
+import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
 const ContactsPage = () => {
+    const phone = <PhoneOutlinedIcon fontSize={"large"}/>
+    const email = <EmailOutlinedIcon fontSize={"large"}/>
+    const address = <LocationOnOutlinedIcon fontSize={"large"}/>
     return (
         <MainLayout>
             <Title title={"Contacts"} span={"contacts"}/>
@@ -35,7 +42,18 @@ const ContactsPage = () => {
                         </form>
                     </div>
                     <div className="right-content">
-
+                        <ContactCard title={"Phone"}
+                                     icon={phone}
+                                     contact1={"+012-3456-7891"}
+                                     contact2={"+012-3456-7892"}/>
+                        <ContactCard title={"Email"} icon={email}
+                                     contact1={"admin.sitename@example.com"}
+                                     contact2={"info.sitename@example.com"}
+                        />
+                        <ContactCard title={"Address"}
+                                     icon={address}
+                                     contact1={"121 King Street, Melbourne, Victoria 3000, Australia"}
+                        />
                     </div>
                 </ContactsPageStyled>
             </InnerLayout>
@@ -46,6 +64,7 @@ const ContactsPage = () => {
 const ContactsPageStyled = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
 
   .contact-title {
     font-size: 1.71rem;
