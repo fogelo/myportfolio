@@ -13,7 +13,6 @@ function App() {
     return (
         <AppStyled>
             <Sidebar/>
-
             <MainContentStyled>
                 <div className={"lines"}>
                     <div className="lines-1"/>
@@ -29,12 +28,7 @@ function App() {
                     <Route path={'/blogs'} element={<BlogsPage/>}/>
                     <Route path={'/contacts'} element={<ContactsPage/>}/>
                 </Routes>
-
-
-
             </MainContentStyled>
-
-
         </AppStyled>
     );
 }
@@ -52,7 +46,7 @@ const MainContentStyled = styled.main`
   .lines {
     position: absolute;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     justify-content: space-evenly;
 

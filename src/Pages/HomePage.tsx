@@ -4,6 +4,8 @@ import styled from "styled-components";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {Icon32LogoVk} from "@vkontakte/icons";
+import {ReactComponent as YourSvg} from "../img/codewars.svg";
+import CodewarsIcon from "../Components/icons/CodewarsIcon";
 
 const HomePage = () => {
     return (
@@ -18,9 +20,22 @@ const HomePage = () => {
                     mollitia numquam quas qui quis quod voluptatibus!
                 </p>
                 <div className={"icons"}>
-                    <a href={'https://t.me/ant_or'} className="icon i-telegram"><TelegramIcon/></a>
-                    <a href={'https://github.com/fogelo'} className="icon i-github"><GitHubIcon/></a>
-                    <a href={'https://vk.com/id715020392'} className="icon i-vk"><Icon32LogoVk/></a>
+                    <a href={"https://t.me/ant_or"}
+                       className="icon i-telegram">
+                        <TelegramIcon/>
+                    </a>
+                    <a href={"https://github.com/fogelo"}
+                       className="icon i-github">
+                        <GitHubIcon/>
+                    </a>
+                    <a href={"https://vk.com/id715020392"}
+                       className="icon i-vk">
+                        <Icon32LogoVk/>
+                    </a>
+                    <a href={"https://www.codewars.com/users/orlovAnton"}
+                       className="icon i-codewars">
+                        <CodewarsIcon/>
+                    </a>
                 </div>
             </div>
         </HomePageStyled>
@@ -61,7 +76,8 @@ const HomePageStyled = styled.header`
         padding: 0.5rem;
         border-radius: 50%;
         cursor: pointer;
-        transition: all .3s ease-in-out ;
+        transition: all .3s ease-in-out;
+
         &:hover {
           border: 2px solid var(--primary-color);
           color: var(--primary-color);
