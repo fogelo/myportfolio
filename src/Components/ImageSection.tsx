@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import aboutPhoto from "../img/me2.jpg"
+import aboutPhoto from "../img/me.jpg"
 import PrimaryButton from "./PrimaryButton";
 import AboutInfoCard from "./AboutInfoCard";
 
