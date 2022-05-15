@@ -100,6 +100,12 @@ const HomePageStyled = styled.header`
         color: #5F4687;
       }
 
+      .i-codewars {
+        svg {
+          color: var(--font-light-color);
+          fill: var(--font-light-color);
+        }
+      }
       .i-codewars:hover {
         border: 2px solid #A33F29;
           svg {
