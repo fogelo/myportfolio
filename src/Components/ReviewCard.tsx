@@ -19,11 +19,6 @@ const ReviewsCardStyled = styled.div`
   border-left: 5px solid var(--border-color);
   position: relative;
   z-index: 1;
-  width: 50%;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
 `
 
 export default ReviewCard;

@@ -4,7 +4,6 @@ import styled from "styled-components";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {Icon32LogoVk} from "@vkontakte/icons";
-import {ReactComponent as YourSvg} from "../img/codewars.svg";
 import CodewarsIcon from "../Components/icons/CodewarsIcon";
 
 const HomePage = () => {
@@ -47,6 +46,15 @@ const HomePageStyled = styled.header`
   height: 100vh;
   position: relative;
 
+  h1 {
+    font-size: 3.3rem;
+    line-height: 4.5rem;
+
+    span {
+      color: var(--primary-color);
+    }
+  }
+
   .particles {
     position: absolute;
     top: 0;
@@ -64,8 +72,9 @@ const HomePageStyled = styled.header`
     .icons {
       display: flex;
       justify-content: center;
+      gap: 0.8rem;
       margin-top: 50px;
-
+      
       .icon {
         border: 2px solid var(--border-color);
         width: 3rem;
@@ -77,15 +86,20 @@ const HomePageStyled = styled.header`
         border-radius: 50%;
         cursor: pointer;
         transition: all .3s ease-in-out;
-
+        color: var(--font-light-color);
+        
         &:hover {
           border: 2px solid var(--primary-color);
           color: var(--primary-color);
         }
-
-        &:not(:last-child) {
-          margin-right: 1rem;
-        }
+      }
+      .i-github:hover {
+        border: 2px solid #5F4687;
+        color: #5F4687;
+      }
+      .i-codewars:hover {
+        border: 2px solid #A33F29;
+        color: #A33F29;
       }
     }
   }

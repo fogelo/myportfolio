@@ -56,7 +56,7 @@ const NavigationStyled = styled.nav`
   align-items: center;
   height: 100%;
   width: 100%;
-  border-right: 1px solid var(--border-color);
+  
 
   .avatar {
     width: 100%;
@@ -92,10 +92,10 @@ const NavigationStyled = styled.nav`
         font-weight: 600;
         letter-spacing: 1px;
 
-        &:hover {
-          cursor: pointer;
-          color: var(--primary-color);
-        }
+        //&:hover {
+        //  cursor: pointer;
+        //  color: var(--primary-color);
+        //}
 
         &::before {
           content: "";
@@ -113,12 +113,10 @@ const NavigationStyled = styled.nav`
         }
       }
 
-      a:hover::before {
-        width: 100%;
-        height: 100%;
-
-
-      }
+      //a:hover::before {
+      //  width: 100%;
+      //  height: 100%;
+      //}
     }
   }
 

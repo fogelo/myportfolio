@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const MainLayout = styled.div`
-  padding: 1rem;
+  padding: 1.5rem;
   position: relative;
   z-index: 1;
 `
 export const InnerLayout = styled.div`
-  padding: 5rem 0;
+  padding: 3rem 0;
 `
 

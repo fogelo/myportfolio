@@ -8,14 +8,12 @@ import ReviewsSection from "../Components/ReviewsSection";
 
 const AboutPage = () => {
     return (
-        <MainLayout>
             <AboutPageStyled>
                 <Title title={"About Me"} span={"About Me"}/>
                 <ImageSection/>
                 <ServicesSection/>
                 <ReviewsSection/>
             </AboutPageStyled>
-        </MainLayout>
     );
 };
 

@@ -8,12 +8,10 @@ import Resume from "../Components/Resume";
 const ResumePage = () => {
     return (
         <ResumePageStyled>
-            <MainLayout>
                 <Title title={"MY SKILLS"} span={"MY SKILLS"}/>
                 <Skills/>
                 <Title title={"RESUME"} span={"RESUME"}/>
                 <Resume/>
-            </MainLayout>
         </ResumePageStyled>
     );
 };

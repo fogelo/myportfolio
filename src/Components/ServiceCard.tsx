@@ -28,11 +28,7 @@ const ServiceCardStyled = styled.div`
   border-left: 1px solid var(--border-color);
   position: relative;
   transition: all .4s ease-in-out;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
-
+  
   &:hover {
     transform: translateY(.5rem);
   }

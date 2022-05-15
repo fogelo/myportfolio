@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import aboutPhoto from "../img/about-photo.jpeg"
 import PrimaryButton from "./PrimaryButton";
+import AboutInfoCard from "./AboutInfoCard";
 
 const ImageSection = () => {
     return (
@@ -16,24 +17,14 @@ const ImageSection = () => {
                     website more & more interactive with web animations.
                 </p>
                 <div className={"about-info"}>
-                    <div className={"info-title"}>
-                        <p>Full Name</p>
-                        <p>Age</p>
-                        <p>Nationality</p>
-                        <p>Languages</p>
-                        <p>Location</p>
-                        <p>Service</p>
-                    </div>
-                    <div className={"info"}>
-                        <p>: Orlov Anton</p>
-                        <p>: 31</p>
-                        <p>: Russian</p>
-                        <p>: Russian, English</p>
-                        <p>: Moscow, Russian</p>
-                        <p>: Freelance</p>
-                    </div>
+                    <AboutInfoCard title={"Full Name"} info={"Orlov Anton"}/>
+                    <AboutInfoCard title={"Age"} info={"31"}/>
+                    <AboutInfoCard title={"Nationality"} info={"Russian"}/>
+                    <AboutInfoCard title={"Languages"} info={"Orlov Anton"}/>
+                    <AboutInfoCard title={"Location"} info={"Russian, English"}/>
+                    <AboutInfoCard title={"Service"} info={"Freelance"}/>
                 </div>
-                <div className={'download-cv-btn'}>
+                <div className={"download-cv-btn"}>
                     <PrimaryButton title={"Download CV"}/>
                 </div>
             </div>
@@ -43,24 +34,36 @@ const ImageSection = () => {
 
 
 const ImageSectionStyled = styled.section`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1rem;
+  align-items: center;
   margin-top: 5rem;
   position: relative;
   z-index: 1;
+  
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .left-content {
     width: 100%;
-    margin: 0 .8rem;
+    text-align: center;
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+    }
 
     img {
       width: 100%;
       position: relative;
       z-index: 1;
-
+      @media (max-width: 991px) {
+        max-width: 500px;
+      }
     }
   }
 
   .right-content {
-    margin: 0 .8rem;
 
     h4 {
       font-size: 2rem;
@@ -77,28 +80,9 @@ const ImageSectionStyled = styled.section`
     }
 
     .about-info {
-      display: flex;
-
-      .info-title {
-        padding-right: 3rem;
-
-        p {
-          font-weight: 600;
-        }
-      }
-
-      .info-title, .info {
-        p {
-          padding: .3rem 0;
-        }
-      }
-
-      .info {
-        p {
-          font-weight: 300;
-        }
-      }
+      max-width: 500px;
     }
+
     .download-cv-btn {
       margin-top: 30px;
     }
