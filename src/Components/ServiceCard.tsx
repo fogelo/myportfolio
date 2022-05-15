@@ -28,7 +28,9 @@ const ServiceCardStyled = styled.div`
   border-left: 1px solid var(--border-color);
   position: relative;
   transition: all .4s ease-in-out;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   &:hover {
     transform: translateY(.5rem);
   }
@@ -64,12 +66,7 @@ const ServiceCardStyled = styled.div`
       background-color: var(--border-color);
     }
   }
-
-  p {
-    padding: 0.8rem 0;
-    font-size: 1.1rem;
-
-  }
+  
 `
 
 

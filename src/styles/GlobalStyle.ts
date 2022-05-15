@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-color-light: #057FFF;
     --secondary-color: #ff7675;
     --background-dark-color: #F1F1F1;
-    --background-dark-color-2: #191d2b;
+    --background-dark-color-2: #E4E4E4;
     --border-color: #cbced8;
     --background-light-color: #F1F1F1;
     --background-light-color-2: rgba(3, 127, 255, .3);
@@ -151,6 +151,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     color: var(--white-color);
   }
+  
   p {
     font-size: 1.25rem;
     line-height: 2rem;

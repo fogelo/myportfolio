@@ -6,6 +6,6 @@ export const MainLayout = styled.div`
   z-index: 1;
 `
 export const InnerLayout = styled.div`
-  padding: 3rem 0;
+  padding: 4rem 0;
 `
 

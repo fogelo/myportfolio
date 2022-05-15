@@ -19,13 +19,15 @@ const TitleStyled = styled.div`
   position: relative;
 
   h2 {
-    color: var(--white-color);
-    font-size: 3.1rem;
+    font-size: 2.5rem;
     font-weight: 600;
     text-transform: uppercase;
     position: relative;
     padding-bottom: .8rem;
 
+    @media (max-width: 320px) {
+      font-size: 2rem;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -51,10 +53,13 @@ const TitleStyled = styled.div`
     span {
       font-weight: 900;
       color: rgba(25, 29, 43, .44);
-      font-size: 4.5rem;
+      font-size: 3.7rem;
       position: absolute;
       top: 40%;
       left: 0;
+      @media (max-width: 430px) {
+        display: none;
+      }
     }
   }
 `

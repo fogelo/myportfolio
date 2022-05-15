@@ -5,20 +5,22 @@ import {Drawer, useMediaQuery, useTheme} from "@mui/material";
 
 type SidebarPT = {
     open: boolean
+    toggleDrawer: (event?: React.KeyboardEvent | React.MouseEvent) => void
 }
 
-const Sidebar: FC<SidebarPT> = ({open}) => {
+
+const Sidebar: FC<SidebarPT> = ({open, toggleDrawer}) => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down("lg"));
     console.log(matches)
+
+
     return (
         <DrawerDrawer>
             <Drawer
-                anchor={"left"}
                 open={open}
-                // onClose={toggleDrawer(anchor, false)}
-                // hideBackdrop={true}
-                variant={matches ? "persistent" : "permanent"}
+                onClose={()=>toggleDrawer()}
+                variant={matches ? "temporary" : "permanent"}
             >
                 <SidebarStyled>
                     <Navigation/>
@@ -37,7 +39,10 @@ const DrawerDrawer = styled.div`
 
 
 const SidebarStyled = styled.div`
-  width: 16.3rem;
+  width: 250px;
+  @media (max-width: 480px) {
+    width: 14rem;
+  }
   height: 100vh;
   background-color: var(--sidebar-dark-color);
   z-index: 2;

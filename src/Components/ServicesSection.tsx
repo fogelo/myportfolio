@@ -9,9 +9,9 @@ import game from "../img/game-dev.svg"
 
 const ServicesSection = () => {
     return (
-        <InnerLayout>
-            <ServicesSectionStyled>
-                <Title title={"Services"} span={"services"}/>
+        <ServicesSectionStyled>
+            <Title title={"Services"} span={"services"}/>
+            <InnerLayout>
                 <div className={"services"}>
                     <ServiceCard title={"Web Design"}
                                  image={design}
@@ -23,8 +23,9 @@ const ServicesSection = () => {
                                  image={game}
                                  paragraph={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, sint?"}/>
                 </div>
-            </ServicesSectionStyled>
-        </InnerLayout>
+            </InnerLayout>
+        </ServicesSectionStyled>
+
     );
 };
 
@@ -35,7 +36,6 @@ const ServicesSectionStyled = styled.section`
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
-    margin-top: 3rem;
     @media (max-width: 1440px) {
       grid-template-columns: repeat(2, 1fr);
     }

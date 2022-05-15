@@ -18,6 +18,19 @@ function App() {
     const [theme, setTheme] = useState<"dark-theme" | "light-theme">("dark-theme")
     const [open, setOpen] = useState(false)
 
+
+    const toggleDrawer = (event?: React.KeyboardEvent | React.MouseEvent) => {
+        if (
+            event && event.type === "keydown" &&
+            ((event as React.KeyboardEvent).key === "Tab" ||
+                (event as React.KeyboardEvent).key === "Shift")
+        ) {
+            return;
+        }
+
+        setOpen(!open);
+    };
+
     useEffect(() => {
         document.documentElement.className = theme
     }, [theme])
@@ -32,9 +45,11 @@ function App() {
                         color="default"
                 />
             </div>
-            <Sidebar open={open}/>
-            <IconButton className={"menu"} onClick={() => setOpen(!open)}>
-                <MenuIcon sx={{width: "50px", height: "50px"}}/>
+            <div className={"sidebar"}>
+                <Sidebar open={open} toggleDrawer={(e) => toggleDrawer(e)}/>
+            </div>
+            <IconButton className={"menu"} onClick={toggleDrawer}>
+                <MenuIcon sx={{width: {xs: 30, md: 40}, height: {xs: 30, md: 40}}}/>
             </IconButton>
             <MainContentStyled>
                 <div className={"lines"}>
@@ -60,14 +75,16 @@ function App() {
 const AppStyled = styled.div`
   background-color: var(--background-dark-color);
   position: relative;
-
+  overflow: hidden;
+  padding: 0.8rem;
+  display: flex;
 
   .light-dark-mode {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 15%;
+    top: 70px;
     right: 0;
     z-index: 100;
   }
@@ -77,9 +94,9 @@ const AppStyled = styled.div`
   }
 
   .menu {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    position: fixed;
+    top: 0;
+    right: 0;
     z-index: 10;
     color: var(--white-color);
     @media (min-width: 1200px) {
