@@ -13,7 +13,7 @@ const ContactCard: FC<ContactCardPT> = ({icon, title, contact1, contact2}) => {
     return (
         <ContactCardStyled>
             <div className={"icon"}>{icon}</div>
-            <div className="contacts">
+            <div className="connect">
                 <h5>{title}</h5>
                 <p>{contact1}</p>
                 <p>{contact2}</p>
@@ -24,17 +24,20 @@ const ContactCard: FC<ContactCardPT> = ({icon, title, contact1, contact2}) => {
 
 const ContactCardStyled = styled.div`
   background-color: var(--background-dark-color-2);
-  display: flex;
-  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   min-height: 160px;
-
-  &:not(:first-child) {
-    margin-top: 30px;
+  align-items: center;
+  padding: 10px 30px;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
   }
 
-
   .icon {
-    min-width: 70px;
+    color: var(--font-light-color);
+    width: 70px;
     height: 70px;
     border: 1px solid var(--border-color);
     margin-right: 20px;
@@ -43,7 +46,9 @@ const ContactCardStyled = styled.div`
     align-items: center;
   }
 
-  .contacts {
+  .connect {
+    display: block;
+
     h5 {
       color: var(--white-color);
       padding-bottom: 5px;

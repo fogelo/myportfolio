@@ -24,6 +24,7 @@ const SmallTitleStyled = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--font-light-color);
   }
 
   h4 {

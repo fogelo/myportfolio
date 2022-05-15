@@ -26,6 +26,10 @@ const ResumeCard: FC<ResumeCardPT> = ({years, title, subTitle, description}) => 
 const ResumeCardStyled = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+  }
 
   &:not(:first-child) {
     padding-top: 30px;
@@ -35,23 +39,24 @@ const ResumeCardStyled = styled.div`
   .years {
     padding-left: 20px;
     position: relative;
-
+    color: var(--font-light-color);
     &::before {
       content: "";
       height: 12px;
       width: 12px;
-      border: 2px solid var(--border-color);
+      border: 2px solid var(--font-light-color);
       position: absolute;
-      top: 6px;
-      left: -9px;
+      top: 2px;
+      left: -7px;
       border-radius: 50%;
-      background-color: var(----background-dark-color);
+      background-color: var(--background-dark-color);
     }
   }
 
   .info {
     position: relative;
     padding-left: 50px;
+
     &::before {
       position: absolute;
       top: 17px;

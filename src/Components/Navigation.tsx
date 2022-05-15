@@ -42,7 +42,7 @@ const Navigation = () => {
                 </li>
             </ul>
             <footer className={"footer"}>
-                <p> © 2022 all rights reserved</p>
+                <p> © 2022 my portfolio</p>
             </footer>
         </NavigationStyled>
     );
@@ -106,17 +106,17 @@ const NavigationStyled = styled.nav`
           bottom: 0;
           left: 0;
           background-color: var(--font-light-color);
-          transition: All 0.4s cubic-bezier(1, -0.2, .25, .95);
+          transition: all .4s ease-in-out;
           transform-origin: right;
           z-index: 0;
           opacity: 0.21;
         }
       }
 
-      //a:hover::before {
-      //  width: 100%;
-      //  height: 100%;
-      //}
+      a:hover::before {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 

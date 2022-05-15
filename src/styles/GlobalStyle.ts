@@ -127,6 +127,7 @@ const GlobalStyle = createGlobalStyle`
   a,
   a:visited {
     text-decoration: none;
+    color: inherit;
   }
 
   a:hover {

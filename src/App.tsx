@@ -39,7 +39,7 @@ function App() {
         <AppStyled>
             <div className={"light-dark-mode"}>
                 {theme === "dark-theme"
-                    ? <LightModeOutlinedIcon/>
+                    ? <LightModeOutlinedIcon sx={{color: 'white'}}/>
                     : <LightModeIcon/>}
                 <Switch onChange={() => setTheme(theme === "dark-theme" ? "light-theme" : "dark-theme")}
                         color="default"
@@ -86,7 +86,7 @@ const AppStyled = styled.div`
     position: fixed;
     top: 70px;
     right: 0;
-    z-index: 100;
+    z-index: 2;
   }
 
   .MuiSwitch-track {
@@ -109,10 +109,8 @@ const MainContentStyled = styled.main`
   position: relative;
   margin-left: 16.3rem;
   min-height: 100vh;
-  //min-width: 400px;
-  //display: grid;
-  //grid-template-columns: repeat(1, 1fr);
   width: 100%;
+  z-index: 1;
   @media (max-width: 1200px) {
     margin-left: 0;
   }
@@ -123,6 +121,7 @@ const MainContentStyled = styled.main`
     min-height: 100%;
     display: flex;
     justify-content: space-evenly;
+    z-index: 0;
 
     .lines-1, .lines-2, .lines-3, .lines-4 {
       width: 1px;

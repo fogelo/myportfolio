@@ -66,7 +66,7 @@ const Resume = () => {
 
 const ResumeStyled = styled.div`
   .resume-block {
-    border-left: 2px solid var(--border-color);
+    border-left: 2px solid var(--font-light-color);;
     margin: 50px 0;
   }
 

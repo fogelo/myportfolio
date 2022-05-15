@@ -34,6 +34,7 @@ const ProgressBarStyled = styled.div<{ progress: string }>`
     .percent {
       font-size: 0.85rem;
       font-weight: 200;
+      color: var(--font-light-color);
     }
 
     .progress-container {

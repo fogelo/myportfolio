@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import aboutPhoto from "../img/about-photo.jpeg"
+import aboutPhoto from "../img/me2.jpg"
 import PrimaryButton from "./PrimaryButton";
 import AboutInfoCard from "./AboutInfoCard";
 
@@ -68,6 +68,7 @@ const ImageSectionStyled = styled.section`
 
       span {
         font-size: 2rem;
+        color: var(--primary-color);
       }
     }
 
