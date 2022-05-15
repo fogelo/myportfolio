@@ -104,6 +104,7 @@ const HomePageStyled = styled.header`
         border: 2px solid #A33F29;
           svg {
             color: #A33F29;
+            fill: #A33F29;
           }
         }
     }
