@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/myportfolio/static/js/main.7dfeb59e.js",
+    "static/js/937.8fd9669c.chunk.js": "/myportfolio/static/js/937.8fd9669c.chunk.js",
+    "static/media/ms.png": "/myportfolio/static/media/ms.08be9db50647cba3e940.png",
+    "static/media/react_styled.png": "/myportfolio/static/media/react_styled.c23ef94e49e811227546.png",
+    "static/media/cv_css.png": "/myportfolio/static/media/cv_css.81d949867347b7d84743.png",
+    "static/media/maya-3.jpg": "/myportfolio/static/media/maya-3.8bd072e0038a01cb8a47.jpg",
+    "static/media/blog5.svg": "/myportfolio/static/media/blog5.2599a6b148b590c6ae22f160bfb1278e.svg",
+    "static/media/my-avatar.jpeg": "/myportfolio/static/media/my-avatar.4f12472fea7f129a23da.jpeg",
+    "static/media/blog1.svg": "/myportfolio/static/media/blog1.7ecbb78c2c6c6c0b932e117f71187572.svg",
+    "static/media/blog3.svg": "/myportfolio/static/media/blog3.6291ee7cef8ff133eb035db378fd54fd.svg",
+    "static/media/blog4.svg": "/myportfolio/static/media/blog4.60aa6cecd146aaa676c8c080eb0f4fae.svg",
+    "static/media/me2.jpg": "/myportfolio/static/media/me2.a5b36a1b26d26261e84f.jpg",
+    "static/media/blog2.svg": "/myportfolio/static/media/blog2.099393515c71efe3ba88fc053f6a32cf.svg",
+    "static/media/maya-4.jpg": "/myportfolio/static/media/maya-4.98e8029ed991096bb93b.jpg",
+    "static/media/intelligence.svg": "/myportfolio/static/media/intelligence.11bd2ab25b415eeb093876127c8d6654.svg",
+    "static/media/game-dev.svg": "/myportfolio/static/media/game-dev.20147858b407ad93903c5454f0631b6f.svg",
+    "static/media/design.svg": "/myportfolio/static/media/design.8ecb3043cd761000705693c804edfb76.svg",
+    "index.html": "/myportfolio/index.html",
+    "main.7dfeb59e.js.map": "/myportfolio/static/js/main.7dfeb59e.js.map",
+    "937.8fd9669c.chunk.js.map": "/myportfolio/static/js/937.8fd9669c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.7dfeb59e.js"
+  ]
+}
