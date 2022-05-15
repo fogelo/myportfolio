@@ -74,7 +74,7 @@ const HomePageStyled = styled.header`
       justify-content: center;
       gap: 0.8rem;
       margin-top: 50px;
-      
+
       .icon {
         border: 2px solid var(--border-color);
         width: 3rem;
@@ -88,19 +88,24 @@ const HomePageStyled = styled.header`
         transition: all .3s ease-in-out;
         color: var(--font-light-color);
         
+
         &:hover {
           border: 2px solid var(--primary-color);
           color: var(--primary-color);
         }
       }
+
       .i-github:hover {
         border: 2px solid #5F4687;
         color: #5F4687;
       }
+
       .i-codewars:hover {
         border: 2px solid #A33F29;
-        color: #A33F29;
-      }
+          svg {
+            color: #A33F29;
+          }
+        }
     }
   }
 
