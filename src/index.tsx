@@ -8,7 +8,6 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 
-
 i18n
     // detect user language i18next-browser-languagedetector
     // learn more: https://github.com/i18next/i18next-browser-languageDetector
@@ -38,11 +37,11 @@ i18n
         //     }
         // },
         detection: {
-            order: ["cookie", "htmlTag", "localStorage", "path", "subdomain"],
+            order: ["path", "cookie", "htmlTag", "localStorage", "subdomain"],
             caches: ["cookie"]
         },
         backend: {
-            loadPath: "/assets/locales/{{lng}}/trans.json",
+            loadPath: "assets/locales/{{lng}}/trans.json",
         },
     });
 

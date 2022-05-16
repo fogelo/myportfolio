@@ -12,13 +12,24 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import {IconButton, Switch} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {Trans} from "react-i18next";
+
 
 function App() {
 
     const [theme, setTheme] = useState<"dark-theme" | "light-theme">("dark-theme")
     const [open, setOpen] = useState(false)
-
+    const languages = [
+        {
+            code: "en",
+            name: "English",
+            country_code: "gb"
+        },
+        {
+            code: "ru",
+            name: "Русский",
+            country_code: "ru"
+        }
+    ]
 
     const toggleDrawer = (event?: React.KeyboardEvent | React.MouseEvent) => {
         if (
@@ -38,10 +49,9 @@ function App() {
 
     return (
         <AppStyled>
-
             <div className={"light-dark-mode"}>
                 {theme === "dark-theme"
-                    ? <LightModeOutlinedIcon sx={{color: 'white'}}/>
+                    ? <LightModeOutlinedIcon sx={{color: "white"}}/>
                     : <LightModeIcon/>}
                 <Switch onChange={() => setTheme(theme === "dark-theme" ? "light-theme" : "dark-theme")}
                         color="default"
@@ -81,6 +91,10 @@ const AppStyled = styled.div`
   padding: 0.8rem;
   display: flex;
 
+  .dropdown {
+    position: relative;
+    z-index: 100;
+  }
   .light-dark-mode {
     display: flex;
     justify-content: center;

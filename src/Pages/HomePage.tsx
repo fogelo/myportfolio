@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Particles from "../Components/Particles";
 import styled from "styled-components";
 import TelegramIcon from "@mui/icons-material/Telegram";
@@ -6,11 +6,56 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import {Icon32LogoVk} from "@vkontakte/icons";
 import CodewarsIcon from "../Components/icons/CodewarsIcon";
 import {Trans, useTranslation} from "react-i18next";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "flag-icon-css/css/flag-icons.min.css"
+import GlobeIcon from "../Components/icons/GlobeIcon";
+import i18next from "i18next";
+import cookies from "js-cookie"
 
 const HomePage = () => {
     const {t} = useTranslation()
+    const languages = [
+        {
+            code: "en",
+            name: "English",
+            country_code: "gb"
+        },
+        {
+            code: "ru",
+            name: "Русский",
+            country_code: "ru"
+        }
+    ]
+    const currentLanguageCode = cookies.get("i18next") || "en"
+    const currentLanguage = languages.find(l => l.code === currentLanguageCode)
+    useEffect(() => {
+        document.title = t("app-title")
+    }, [currentLanguage])
     return (
         <HomePageStyled>
+            <div className="dropdown">
+                <button className="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <GlobeIcon/>
+                </button>
+                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                    {languages.map(l => (
+                        <li>
+                            <button className="dropdown-item"
+                                    onClick={() => i18next.changeLanguage(l.code)}
+                                    disabled={l.code === currentLanguageCode}
+                            >
+                                <span className={`flag-icon flag-icon-${l.country_code} mx-2`}
+                                      style={{opacity: l.code === currentLanguageCode ? "0.3" : ""}}
+                                />
+                                {l.name}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
             <div className={"particles"}>
                 <Particles/>
             </div>
@@ -18,7 +63,7 @@ const HomePage = () => {
                 {/*<h1>Hi I'm <span>Orlov Anton</span></h1>*/}
                 {/*<h1>{t("home-page")}</h1>*/}
                 <Trans i18nKey={"home-page"}>
-                    <h1>Hi I'm <span>Orlov Antonnnnnnn</span></h1>
+                    <h1>Hi I'm <span>Orlov Anton</span></h1>
                 </Trans>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur debitis ex, fuga
@@ -51,6 +96,15 @@ const HomePageStyled = styled.header`
   width: 100%;
   height: 100vh;
   position: relative;
+
+  .dropdown {
+    .dropdown-menu {
+      background-color: transparent;
+      .dropdown-item {
+        color: var(--font-light-color);
+      }
+    }
+  }
 
   h1 {
     font-size: 3.3rem;
