@@ -12,6 +12,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import {IconButton, Switch} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import {Trans} from "react-i18next";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
 
     return (
         <AppStyled>
+
             <div className={"light-dark-mode"}>
                 {theme === "dark-theme"
                     ? <LightModeOutlinedIcon sx={{color: 'white'}}/>

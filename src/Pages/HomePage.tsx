@@ -5,6 +5,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {Icon32LogoVk} from "@vkontakte/icons";
 import CodewarsIcon from "../Components/icons/CodewarsIcon";
+import {Trans} from "react-i18next";
 
 const HomePage = () => {
     return (
@@ -13,7 +14,11 @@ const HomePage = () => {
                 <Particles/>
             </div>
             <div className={"typography"}>
-                <h1>Hi I'm <span>Orlov Anton</span></h1>
+                {/*<h1>Hi I'm <span>Orlov Anton</span></h1>*/}
+                {/*<h1>{t("home-page")}</h1>*/}
+                <Trans i18nKey={"home-page"}>
+                    <h1>Hi I'm <span>Orlov Antonnnnnnn</span></h1>
+                </Trans>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur debitis ex, fuga
                     mollitia numquam quas qui quis quod voluptatibus!
