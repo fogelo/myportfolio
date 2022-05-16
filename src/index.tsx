@@ -42,7 +42,7 @@ i18n
             caches: ["cookie"]
         },
         backend: {
-            loadPath: "https://fogelo.github.io/myportfolio/assets/locales/{{lng}}/trans.json",
+            loadPath: "/assets/locales/{{lng}}/trans.json",
         },
     });
 

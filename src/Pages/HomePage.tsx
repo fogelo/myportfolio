@@ -5,9 +5,10 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {Icon32LogoVk} from "@vkontakte/icons";
 import CodewarsIcon from "../Components/icons/CodewarsIcon";
-import {Trans} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 
 const HomePage = () => {
+    const {t} = useTranslation()
     return (
         <HomePageStyled>
             <div className={"particles"}>
@@ -92,7 +93,7 @@ const HomePageStyled = styled.header`
         cursor: pointer;
         transition: all .3s ease-in-out;
         color: var(--font-light-color);
-        
+
 
         &:hover {
           border: 2px solid var(--primary-color);
@@ -111,13 +112,15 @@ const HomePageStyled = styled.header`
           fill: var(--font-light-color);
         }
       }
+
       .i-codewars:hover {
         border: 2px solid #A33F29;
-          svg {
-            color: #A33F29;
-            fill: #A33F29;
-          }
+
+        svg {
+          color: #A33F29;
+          fill: #A33F29;
         }
+      }
     }
   }
 
