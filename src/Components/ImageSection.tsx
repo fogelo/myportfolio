@@ -3,31 +3,32 @@ import styled from "styled-components";
 import aboutPhoto from "../img/me.jpeg"
 import PrimaryButton from "./PrimaryButton";
 import AboutInfoCard from "./AboutInfoCard";
+import {Button} from "@mui/material";
 
 const ImageSection = () => {
     return (
         <ImageSectionStyled>
-                <div className={"left-content"}>
-                    <img src={aboutPhoto} alt="about"/>
+            <div className={"left-content"}>
+                <img src={aboutPhoto} alt="about"/>
+            </div>
+            <div className={"right-content"}>
+                <h4>I am <span>Orlov Anton</span></h4>
+                <p className={"paragraph"}>
+                    I am a frontend web developer. I can provide clean code and pixel perfect design. I also make
+                    website more & more interactive with web animations.
+                </p>
+                <div className={"about-info"}>
+                    <AboutInfoCard title={"Full Name"} info={"Orlov Anton"}/>
+                    <AboutInfoCard title={"Age"} info={"31"}/>
+                    <AboutInfoCard title={"Nationality"} info={"Russian"}/>
+                    <AboutInfoCard title={"Languages"} info={"Orlov Anton"}/>
+                    <AboutInfoCard title={"Location"} info={"Russian, English"}/>
+                    <AboutInfoCard title={"Service"} info={"Freelance"}/>
                 </div>
-                <div className={"right-content"}>
-                    <h4>I am <span>Orlov Anton</span></h4>
-                    <p className={"paragraph"}>
-                        I am a frontend web developer. I can provide clean code and pixel perfect design. I also make
-                        website more & more interactive with web animations.
-                    </p>
-                    <div className={"about-info"}>
-                        <AboutInfoCard title={"Full Name"} info={"Orlov Anton"}/>
-                        <AboutInfoCard title={"Age"} info={"31"}/>
-                        <AboutInfoCard title={"Nationality"} info={"Russian"}/>
-                        <AboutInfoCard title={"Languages"} info={"Orlov Anton"}/>
-                        <AboutInfoCard title={"Location"} info={"Russian, English"}/>
-                        <AboutInfoCard title={"Service"} info={"Freelance"}/>
-                    </div>
-                    <div className={"download-cv-btn"}>
-                        <PrimaryButton title={"Download CV"}/>
-                    </div>
+                <div className={"download-cv-btn"}>
+                        <PrimaryButton title={"Download CV"} download href={"assets/cv/Orlov Anton.pdf"}/>
                 </div>
+            </div>
         </ImageSectionStyled>
     );
 };
@@ -49,7 +50,7 @@ const ImageSectionStyled = styled.section`
   .left-content {
     width: 100%;
     text-align: center;
-    
+
     img {
       width: 100%;
       position: relative;

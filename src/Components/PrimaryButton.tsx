@@ -3,11 +3,13 @@ import styled from "styled-components";
 
 type PrimaryButtonPT = {
     title: string
+    download?: boolean
+    href?: string
 }
 
-const PrimaryButton: FC<PrimaryButtonPT> = ({title}) => {
+const PrimaryButton: FC<PrimaryButtonPT> = ({title, download, href = "#"}) => {
     return (
-        <PrimaryButtonStyled>
+        <PrimaryButtonStyled download={download} href={href}>
             {title}
         </PrimaryButtonStyled>
     );
@@ -33,6 +35,10 @@ const PrimaryButtonStyled = styled.a`
     height: .3rem;
     background-color: var(--background-light-color);
     transition: all 0.4s ease-in-out;
+  }
+
+  &:hover {
+    color: white;
   }
 
   &:hover::after {

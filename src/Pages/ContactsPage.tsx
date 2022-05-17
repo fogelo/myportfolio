@@ -114,14 +114,19 @@ const ContactsPageStyled = styled.section`
           padding: 10px 15px;
           width: 100%;
         }
+
+        a {
+          color: white;
+        }
       }
     }
+  }
 
-    .right-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
+  .right-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `
 
 export default ContactsPage;
