@@ -19,18 +19,6 @@ function App() {
 
     const [theme, setTheme] = useState<"dark-theme" | "light-theme">("dark-theme")
     const [open, setOpen] = useState(false)
-    const languages = [
-        {
-            code: "en",
-            name: "English",
-            country_code: "gb"
-        },
-        {
-            code: "ru",
-            name: "Русский",
-            country_code: "ru"
-        }
-    ]
 
     const toggleDrawer = (event?: React.KeyboardEvent | React.MouseEvent) => {
         if (
@@ -51,10 +39,8 @@ function App() {
 
     const location = useLocation()
     const transitions = useTransition(location, {
-        exitBeforeEnter: true,
         from: { opacity: 0, transform: 'translateX(-50%)' },
         enter: { opacity: 1, transform: 'translateX(0%)' },
-        leave: { opacity: 0, transform: 'translateX(100%)' },
     })
 
     return (
