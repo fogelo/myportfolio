@@ -45,11 +45,10 @@ const HomePage = () => {
                         <li>
                             <button className="dropdown-item"
                                     onClick={() => i18next.changeLanguage(l.code)}
+                                    style={{opacity: l.code === currentLanguageCode ? 0.5 : 1}}
                                     disabled={l.code === currentLanguageCode}
                             >
-                                <span className={`flag-icon flag-icon-${l.country_code} mx-2`}
-                                      style={{opacity: l.code === currentLanguageCode ? "0.3" : ""}}
-                                />
+                                <span className={`flag-icon flag-icon-${l.country_code} mx-2`}/>
                                 {l.name}
                             </button>
                         </li>
@@ -97,11 +96,25 @@ const HomePageStyled = styled.header`
   height: 100vh;
   position: relative;
 
+  .btn {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
   .dropdown {
     .dropdown-menu {
       background-color: transparent;
+      border-color: transparent;
+
       .dropdown-item {
         color: var(--font-light-color);
+        background: none;
+
+        &:hover {
+          color: var(--primary-color);
+        }
+
       }
     }
   }

@@ -49,6 +49,7 @@ function App() {
 
     return (
         <AppStyled>
+            <a href="./img/me.jpeg" download={""}>скачать резюме</a>
             <div className={"light-dark-mode"}>
                 {theme === "dark-theme"
                     ? <LightModeOutlinedIcon sx={{color: "white"}}/>
