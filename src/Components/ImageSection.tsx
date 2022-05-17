@@ -3,7 +3,7 @@ import styled from "styled-components";
 import aboutPhoto from "../img/me.jpeg"
 import PrimaryButton from "./PrimaryButton";
 import AboutInfoCard from "./AboutInfoCard";
-import {Button} from "@mui/material";
+import {Trans} from "react-i18next";
 
 const ImageSection = () => {
     return (
@@ -12,21 +12,24 @@ const ImageSection = () => {
                 <img src={aboutPhoto} alt="about"/>
             </div>
             <div className={"right-content"}>
-                <h4>I am <span>Orlov Anton</span></h4>
-                <p className={"paragraph"}>
-                    I am a frontend web developer. I can provide clean code and pixel perfect design. I also make
-                    website more & more interactive with web animations.
-                </p>
-                <div className={"about-info"}>
-                    <AboutInfoCard title={"Full Name"} info={"Orlov Anton"}/>
-                    <AboutInfoCard title={"Age"} info={"31"}/>
-                    <AboutInfoCard title={"Nationality"} info={"Russian"}/>
-                    <AboutInfoCard title={"Languages"} info={"Orlov Anton"}/>
-                    <AboutInfoCard title={"Location"} info={"Russian, English"}/>
-                    <AboutInfoCard title={"Service"} info={"Freelance"}/>
-                </div>
+                <Trans i18nKey={"about_page.image_section.subtitle"}>
+                    <h4>I am <span>Orlov Anton</span></h4>
+                </Trans>
+                <Trans i18nKey={"about_page.image_section.paragraph"}>
+                    <p className={"paragraph"}>
+                        I'm a Front End Web developer with of experience in Javascript, Typescript, React, Redux, REST API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next etc.
+                    </p>
+                </Trans>
+                {/*<div className={"about-info"}>*/}
+                {/*    <AboutInfoCard title={"Full Name"} info={"Orlov Anton"}/>*/}
+                {/*    <AboutInfoCard title={"Age"} info={"31"}/>*/}
+                {/*    <AboutInfoCard title={"Nationality"} info={"Russian"}/>*/}
+                {/*    <AboutInfoCard title={"Languages"} info={"Orlov Anton"}/>*/}
+                {/*    <AboutInfoCard title={"Location"} info={"Russian, English"}/>*/}
+                {/*    <AboutInfoCard title={"Service"} info={"Freelance"}/>*/}
+                {/*</div>*/}
                 <div className={"download-cv-btn"}>
-                        <PrimaryButton title={"Download CV"} download href={"assets/cv/Orlov Anton.pdf"}/>
+                    <PrimaryButton title={"Download CV"} download href={"assets/cv/Orlov Anton.pdf"}/>
                 </div>
             </div>
         </ImageSectionStyled>

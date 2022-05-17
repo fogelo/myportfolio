@@ -12,8 +12,6 @@ type SidebarPT = {
 const Sidebar: FC<SidebarPT> = ({open, toggleDrawer}) => {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down("lg"));
-    console.log(matches)
-
 
     return (
         <DrawerDrawer>

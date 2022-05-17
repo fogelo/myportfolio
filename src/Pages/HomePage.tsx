@@ -17,11 +17,13 @@ const HomePage = () => {
     const {t} = useTranslation()
     const languages = [
         {
+            id: 1,
             code: "en",
             name: "English",
             country_code: "gb"
         },
         {
+            id: 2,
             code: "ru",
             name: "Русский",
             country_code: "ru"
@@ -42,7 +44,7 @@ const HomePage = () => {
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
                     {languages.map(l => (
-                        <li>
+                        <li key={l.id}>
                             <button className="dropdown-item"
                                     onClick={() => i18next.changeLanguage(l.code)}
                                     style={{opacity: l.code === currentLanguageCode ? 0.5 : 1}}
@@ -61,13 +63,15 @@ const HomePage = () => {
             <div className={"typography"}>
                 {/*<h1>Hi I'm <span>Orlov Anton</span></h1>*/}
                 {/*<h1>{t("home-page")}</h1>*/}
-                <Trans i18nKey={"home-page"}>
-                    <h1>Hi I'm <span>Orlov Anton</span></h1>
+                <Trans i18nKey={"home-page.title"}>
+                    <h1>Hi I'm <br/><span>Orlov Anton</span></h1>
                 </Trans>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur debitis ex, fuga
-                    mollitia numquam quas qui quis quod voluptatibus!
-                </p>
+                <Trans i18nKey={"home-page.subtitle"}>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur debitis ex, fuga
+                        mollitia numquam quas qui quis quod voluptatibus!
+                    </p>
+                </Trans>
                 <div className={"icons"}>
                     <a href={"https://t.me/ant_or"}
                        className="icon i-telegram">
