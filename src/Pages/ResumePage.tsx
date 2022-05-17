@@ -4,14 +4,16 @@ import {MainLayout} from "../styles/Layouts";
 import Title from "../Components/Title";
 import Skills from "../Components/Skills";
 import Resume from "../Components/Resume";
+import {useTranslation} from "react-i18next";
 
 const ResumePage = () => {
+    const {t} = useTranslation()
     return (
         <ResumePageStyled>
-                <Title title={"MY SKILLS"} span={"MY SKILLS"}/>
-                <Skills/>
-                <Title title={"RESUME"} span={"RESUME"}/>
-                <Resume/>
+            <Title title={t("resume_page.title1")} span={t("resume_page.title1")}/>
+            <Skills/>
+            <Title title={t("resume_page.title2")} span={t("resume_page.title2")}/>
+            <Resume/>
         </ResumePageStyled>
     );
 };

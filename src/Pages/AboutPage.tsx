@@ -11,7 +11,7 @@ const AboutPage = () => {
     const {t}  = useTranslation()
     return (
             <AboutPageStyled>
-                <Title title={t("about_page.image_section.title")} span={"about_page.image_section.title"}/>
+                <Title title={t("about_page.image_section.title")} span={t("about_page.image_section.title")}/>
                 <ImageSection/>
                 <ServicesSection/>
                 <ReviewsSection/>

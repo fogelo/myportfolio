@@ -32,7 +32,7 @@ const HomePage = () => {
     const currentLanguageCode = cookies.get("i18next") || "en"
     const currentLanguage = languages.find(l => l.code === currentLanguageCode)
     useEffect(() => {
-        document.title = t("app-title")
+        document.title = t("app_title")
     }, [currentLanguage])
     return (
         <HomePageStyled>
@@ -63,10 +63,10 @@ const HomePage = () => {
             <div className={"typography"}>
                 {/*<h1>Hi I'm <span>Orlov Anton</span></h1>*/}
                 {/*<h1>{t("home-page")}</h1>*/}
-                <Trans i18nKey={"home-page.title"}>
+                <Trans i18nKey={"home_page.title"}>
                     <h1>Hi I'm <br/><span>Orlov Anton</span></h1>
                 </Trans>
-                <Trans i18nKey={"home-page.subtitle"}>
+                <Trans i18nKey={"home_page.subtitle"}>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur debitis ex, fuga
                         mollitia numquam quas qui quis quod voluptatibus!

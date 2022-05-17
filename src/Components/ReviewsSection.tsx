@@ -3,11 +3,13 @@ import styled from "styled-components";
 import Title from "./Title";
 import {InnerLayout} from "../styles/Layouts";
 import ReviewCard from "./ReviewCard";
+import {useTranslation} from "react-i18next";
 
 const ReviewsSection = () => {
+    const {t} = useTranslation()
     return (
         <ReviewsSectionStyled>
-            <Title title={"Reviews"} span={"reviews"}/>
+            <Title title={t("about_page.reviews_section.title")} span={t("about_page.reviews_section.title")}/>
             <InnerLayout>
                 <div className={"reviews"}>
                     <ReviewCard

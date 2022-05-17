@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import avatar from "../img/my-avatar.jpeg"
 import {NavLink} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const Navigation = () => {
+    const {t} = useTranslation()
     return (
         <NavigationStyled>
             <div className={"avatar"}>
@@ -11,33 +13,33 @@ const Navigation = () => {
             </div>
             <ul className={"nav-items"}>
                 <li className={"nav-item"}>
-                    <NavLink to={"/"} className={({ isActive }) => isActive ? "active-link" : ""}>
-                        Home
+                    <NavLink to={"/"} className={({isActive}) => isActive ? "active-link" : ""}>
+                        {t("sidebar.home")}
                     </NavLink>
                 </li>
                 <li className={"nav-item"}>
-                    <NavLink to={"/about"} className={({ isActive }) => isActive ? "active-link" : ""}>
-                        About
+                    <NavLink to={"/about"} className={({isActive}) => isActive ? "active-link" : ""}>
+                        {t("sidebar.about")}
                     </NavLink>
                 </li>
                 <li className={"nav-item"}>
-                    <NavLink to={"/resume"} className={({ isActive }) => isActive ? "active-link" : ""}>
-                        Resume
+                    <NavLink to={"/resume"} className={({isActive}) => isActive ? "active-link" : ""}>
+                        {t("sidebar.resume")}
                     </NavLink>
                 </li>
                 <li className={"nav-item"}>
-                    <NavLink to={"/portfolios"} className={({ isActive }) => isActive ? "active-link" : ""}>
-                        Portfolios
+                    <NavLink to={"/portfolios"} className={({isActive}) => isActive ? "active-link" : ""}>
+                        {t("sidebar.portfolio")}
                     </NavLink>
                 </li>
                 <li className={"nav-item"}>
-                    <NavLink to={"/blogs"} className={({ isActive }) => isActive ? "active-link" : ""}>
-                        Blogs
+                    <NavLink to={"/blogs"} className={({isActive}) => isActive ? "active-link" : ""}>
+                        {t("sidebar.blog")}
                     </NavLink>
                 </li>
                 <li className={"nav-item"}>
-                    <NavLink to={"/contacts"} className={({ isActive }) => isActive ? "active-link" : ""}>
-                        Contacts
+                    <NavLink to={"/contacts"} className={({isActive}) => isActive ? "active-link" : ""}>
+                        {t("sidebar.contacts")}
                     </NavLink>
                 </li>
             </ul>
@@ -56,7 +58,7 @@ const NavigationStyled = styled.nav`
   align-items: center;
   height: 100%;
   width: 100%;
-  
+
 
   .avatar {
     width: 100%;
@@ -75,9 +77,12 @@ const NavigationStyled = styled.nav`
   .nav-items {
     width: 100%;
     text-align: center;
-    .active-link{
+
+    .active-link {
       background-color: var(--primary-color);
     }
+
+    padding: 0;
 
     li {
       display: block;

@@ -1,5 +1,13 @@
 {
   "app_title": "Portfolio",
+  "sidebar": {
+    "home": "home",
+    "about": "about",
+    "resume": "resume",
+    "portfolio": "portfolio",
+    "blog": "blog",
+    "contacts": "contacts"
+  },
   "home_page": {
     "title": "<0>Hi I'm <2>Orlov Anton</2></0>",
     "subtitle": "<0>I'm a Front End Web developer</0>"
@@ -12,6 +20,46 @@
     },
     "services_section": {
       "title": "services"
+    },
+    "reviews_section": {
+      "title": "reviews"
+    }
+  },
+  "resume_page": {
+    "title1": "my_skills",
+    "title2": "resume",
+    "resume": {
+      "experience": {
+        "title": "Working Experience",
+        "exp1": {
+          "position": "Junior researcher",
+          "company": "Siberian Federal University",
+          "description": "Modeling of heat transfer processes, computational gas and hydrodynamics, multiphase flows, stress‐strain state calculations."
+        },
+        "exp2": {
+          "position": "Engineer",
+          "company": "RUSAL",
+          "description": "Mathematical modeling of thermophysical processes"
+        }
+      },
+      "education": {
+        "title": "Educational Qualifications",
+        "educ1": {
+          "degree": "Bachelor's degree",
+          "university": "SFU, Institute of engineering physics and radio electronics",
+          "description": "In 2012, I received a bachelor's degree in Engineering and Technology in the direction of \"Technical Physics\""
+        },
+        "educ2": {
+          "degree": "Master's degree",
+          "university": "SFU, Institute of engineering physics and radio electronics",
+          "description": "In 2014, I received a master's degree in the field of training \"Nuclear power engineering and Thermophysics\""
+        },
+        "educ3": {
+          "degree": "Postgraduate studies",
+          "university": "SFU, Institute of engineering physics and radio electronics",
+          "description": "I have mastered the program of training scientific and pedagogical personnel in postgraduate studies in the field of \"Physics and Astronomy\". In 2018, i was awarded the qualification of a teacher‐researcher."
+        }
+      }
     }
   }
 }

@@ -28,6 +28,7 @@ const SmallTitleStyled = styled.div`
   }
 
   h4 {
+    margin-bottom: 0;
     color: var(--white-color);
     font-weight: 700;
     font-size: 1.43rem;

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Sidebar from "./Components/Sidebar";
 import HomePage from "./Pages/HomePage";
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, useLocation} from "react-router-dom";
 import AboutPage from "./Pages/AboutPage";
 import ResumePage from "./Pages/ResumePage";
 import PortfoliosPage from "./Pages/PortfoliosPage";
@@ -12,6 +12,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import {IconButton, Switch} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import {animated, useTransition} from "react-spring";
 
 
 function App() {
@@ -47,6 +48,15 @@ function App() {
         document.documentElement.className = theme
     }, [theme])
 
+
+    const location = useLocation()
+    const transitions = useTransition(location, {
+        exitBeforeEnter: true,
+        from: { opacity: 0, transform: 'translateX(-50%)' },
+        enter: { opacity: 1, transform: 'translateX(0%)' },
+        leave: { opacity: 0, transform: 'translateX(100%)' },
+    })
+
     return (
         <AppStyled>
 
@@ -71,14 +81,22 @@ function App() {
                     <div className="lines-3"/>
                     <div className="lines-4"/>
                 </div>
-                <Routes>
-                    <Route path={"/"} element={<HomePage/>}/>
-                    <Route path={"/about"} element={<AboutPage/>}/>
-                    <Route path={"/resume"} element={<ResumePage/>}/>
-                    <Route path={"/portfolios"} element={<PortfoliosPage/>}/>
-                    <Route path={"/blogs"} element={<BlogsPage/>}/>
-                    <Route path={"/contacts"} element={<ContactsPage/>}/>
-                </Routes>
+
+                {
+                    transitions((props, item) => (
+                        <animated.div style={props}>
+                            <Routes location={item}>
+                                <Route path={"/"} element={<HomePage/>}/>
+                                <Route path={"/about"} element={<AboutPage/>}/>
+                                <Route path={"/resume"} element={<ResumePage/>}/>
+                                <Route path={"/portfolios"} element={<PortfoliosPage/>}/>
+                                <Route path={"/blogs"} element={<BlogsPage/>}/>
+                                <Route path={"/contacts"} element={<ContactsPage/>}/>
+                            </Routes>
+                        </animated.div>
+                    ))
+                }
+
             </MainContentStyled>
         </AppStyled>
     );
@@ -96,13 +114,14 @@ const AppStyled = styled.div`
     position: relative;
     z-index: 100;
   }
+
   .light-dark-mode {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 70px;
-    right: 0;
+    right: 5px;
     z-index: 2;
   }
 
@@ -113,7 +132,7 @@ const AppStyled = styled.div`
   .menu {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 5px;
     z-index: 10;
     color: var(--white-color);
     @media (min-width: 1200px) {
