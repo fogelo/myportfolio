@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import GlobalStyle from "./styles/GlobalStyle"
@@ -51,10 +51,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <>
-        <GlobalStyle/>
-        <HashRouter>
-            <App/>
-        </HashRouter>
+        <Suspense fallback={<h1>Loading profile...</h1>}>
+            <GlobalStyle/>
+            <HashRouter>
+                <App/>
+            </HashRouter>
+        </Suspense>
+
     </>
 );
 
