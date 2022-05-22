@@ -3,7 +3,6 @@ import Particles from "../Components/Particles";
 import styled from "styled-components";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import {Icon32LogoVk} from "@vkontakte/icons";
 import CodewarsIcon from "../Components/icons/CodewarsIcon";
 import {Trans, useTranslation} from "react-i18next";
 import "bootstrap";
@@ -84,10 +83,10 @@ const HomePage = () => {
                        className="icon i-github">
                         <GitHubIcon/>
                     </a>
-                    <a href={"https://vk.com/id715020392"}
-                       className="icon i-vk">
-                        <Icon32LogoVk/>
-                    </a>
+                    {/*<a href={"https://vk.com/id715020392"}*/}
+                    {/*   className="icon i-vk">*/}
+                    {/*    <Icon32LogoVk/>*/}
+                    {/*</a>*/}
                     <a href={"https://www.codewars.com/users/orlovAnton"}
                        className="icon i-codewars">
                         <CodewarsIcon/>
