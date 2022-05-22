@@ -53,9 +53,9 @@ root.render(
     <>
         <Suspense fallback={<h1>Loading profile...</h1>}>
             <GlobalStyle/>
-            <HashRouter>
+            <BrowserRouter>
                 <App/>
-            </HashRouter>
+            </BrowserRouter>
         </Suspense>
 
     </>
