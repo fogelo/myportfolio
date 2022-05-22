@@ -2,14 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import aboutPhoto from "../img/me.jpeg"
 import PrimaryButton from "./PrimaryButton";
-import AboutInfoCard from "./AboutInfoCard";
 import {Trans} from "react-i18next";
+import Tilt from "react-parallax-tilt";
 
 const ImageSection = () => {
     return (
         <ImageSectionStyled>
             <div className={"left-content"}>
-                <img src={aboutPhoto} alt="about"/>
+                <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
+                    <img src={aboutPhoto} alt="about"/>
+                </Tilt>
             </div>
             <div className={"right-content"}>
                 <Trans i18nKey={"about_page.image_section.subtitle"}>
@@ -17,17 +19,10 @@ const ImageSection = () => {
                 </Trans>
                 <Trans i18nKey={"about_page.image_section.paragraph"}>
                     <p className={"paragraph"}>
-                        I'm a Front End Web developer with of experience in Javascript, Typescript, React, Redux, REST API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next etc.
+                        I'm a Front End Web developer with of experience in Javascript, Typescript, React, Redux, REST
+                        API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next etc.
                     </p>
                 </Trans>
-                {/*<div className={"about-info"}>*/}
-                {/*    <AboutInfoCard title={"Full Name"} info={"Orlov Anton"}/>*/}
-                {/*    <AboutInfoCard title={"Age"} info={"31"}/>*/}
-                {/*    <AboutInfoCard title={"Nationality"} info={"Russian"}/>*/}
-                {/*    <AboutInfoCard title={"Languages"} info={"Orlov Anton"}/>*/}
-                {/*    <AboutInfoCard title={"Location"} info={"Russian, English"}/>*/}
-                {/*    <AboutInfoCard title={"Service"} info={"Freelance"}/>*/}
-                {/*</div>*/}
                 <div className={"download-cv-btn"}>
                     <PrimaryButton title={"Download CV"} download href={"assets/cv/Orlov Anton.pdf"}/>
                 </div>
@@ -46,7 +41,7 @@ const ImageSectionStyled = styled.section`
   position: relative;
   z-index: 1;
   padding: 4rem 0;
-  @media (max-width: 991px) {
+  @media (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -55,7 +50,7 @@ const ImageSectionStyled = styled.section`
     text-align: center;
 
     img {
-      width: 100%;
+      width: 80%;
       position: relative;
       z-index: 1;
       @media (max-width: 991px) {

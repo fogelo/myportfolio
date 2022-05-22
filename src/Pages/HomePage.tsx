@@ -12,6 +12,7 @@ import "flag-icon-css/css/flag-icons.min.css"
 import GlobeIcon from "../Components/icons/GlobeIcon";
 import i18next from "i18next";
 import cookies from "js-cookie"
+import ReactTypingEffect from 'react-typing-effect';
 
 const HomePage = () => {
     const {t} = useTranslation()
@@ -61,17 +62,19 @@ const HomePage = () => {
                 <Particles/>
             </div>
             <div className={"typography"}>
-                {/*<h1>Hi I'm <span>Orlov Anton</span></h1>*/}
-                {/*<h1>{t("home-page")}</h1>*/}
                 <Trans i18nKey={"home_page.title"}>
                     <h1>Hi I'm <br/><span>Orlov Anton</span></h1>
                 </Trans>
-                <Trans i18nKey={"home_page.subtitle"}>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur debitis ex, fuga
-                        mollitia numquam quas qui quis quod voluptatibus!
-                    </p>
-                </Trans>
+                {/*<Trans i18nKey={"home_page.subtitle"}>*/}
+                {/*    <p>*/}
+                {/*        I'm a Front End Web developer*/}
+                {/*    </p>*/}
+                {/*</Trans>*/}
+                <p>
+                    <ReactTypingEffect speed={100} typingDelay={1500}
+                        text={[t("home_page.subtitle")]}
+                    />
+                </p>
                 <div className={"icons"}>
                     <a href={"https://t.me/ant_or"}
                        className="icon i-telegram">
