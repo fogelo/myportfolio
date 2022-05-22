@@ -21,15 +21,15 @@ const ContactsPage = () => {
                     <form className={"form"} method="POST" data-netlify="true">
                         <div className={"form-field"}>
                             <label htmlFor="name">Enter your name*</label>
-                            <input type="text" id={"name"}/>
+                            <input type="text" name={"name"} id={"name"}/>
                         </div>
                         <div className={"form-field"}>
                             <label htmlFor="email">Enter your email*</label>
-                            <input type="email" id={"email"}/>
+                            <input type="email" name={"email"} id={"email"}/>
                         </div>
                         <div className={"form-field"}>
                             <label htmlFor="subject">Enter your subject*</label>
-                            <input type="subject" id={"subject"}/>
+                            <input type="subject" name={"subject"} id={"subject"}/>
                         </div>
                         <div className={"form-field"}>
                             <label htmlFor="text-area">Enter your subject*</label>
