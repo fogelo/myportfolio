@@ -11,13 +11,14 @@ const ContactsPage = () => {
     const phone = <PhoneOutlinedIcon fontSize={"large"}/>
     const email = <EmailOutlinedIcon fontSize={"large"}/>
     const address = <LocationOnOutlinedIcon fontSize={"large"}/>
+
     return (
         <ContactsPageStyled>
             <Title title={"Contacts"} span={"contacts"}/>
             <div className={"contacts"}>
                 <div className="left-content">
                     <h4 className={"contact-title"}>Get In Touch</h4>
-                    <form className={"form"}>
+                    <form className={"form"} method="POST" data-netlify="true">
                         <div className={"form-field"}>
                             <label htmlFor="name">Enter your name*</label>
                             <input type="text" id={"name"}/>
