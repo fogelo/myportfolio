@@ -36,7 +36,7 @@ const ContactsPage = () => {
                             <textarea name="textarea" id={"text-area"} cols={30} rows={10}/>
                         </div>
                         <div className={"form-field"}>
-                            <PrimaryButton title={"send mail"}/>
+                            <button type={"submit"}>send</button>
                         </div>
                     </form>
                 </div>
