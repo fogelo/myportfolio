@@ -18,7 +18,7 @@ const ContactsPage = () => {
             <div className={"contacts"}>
                 <div className="left-content">
                     <h4 className={"contact-title"}>Get In Touch</h4>
-                    <form className={"form"} method="POST" data-netlify="true">
+                    <form className={"contact"} method="POST">
                         <div className={"form-field"}>
                             <label htmlFor="name">Enter your name*</label>
                             <input type="text" name={"name"} id={"name"}/>
@@ -29,11 +29,11 @@ const ContactsPage = () => {
                         </div>
                         <div className={"form-field"}>
                             <label htmlFor="subject">Enter your subject*</label>
-                            <input type="subject" name={"subject"} id={"subject"}/>
+                            <input type="text" name={"subject"} id={"subject"}/>
                         </div>
                         <div className={"form-field"}>
                             <label htmlFor="text-area">Enter your subject*</label>
-                            <textarea name="textarea" id={"text-area"} cols={30} rows={10}/>
+                            <textarea name="message" id={"text-area"} cols={30} rows={10}/>
                         </div>
                         <div className={"form-field"}>
                             <button type={"submit"}>send</button>
