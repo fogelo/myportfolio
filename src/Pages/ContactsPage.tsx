@@ -1,58 +1,70 @@
 import React from "react";
 import Title from "../Components/Title";
 import styled from "styled-components";
-import PrimaryButton from "../Components/PrimaryButton";
 import ContactCard from "../Components/ContactCard";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import {Trans, useTranslation} from "react-i18next";
+import PrimaryButtonSubmit from "../Components/PrimaryButtonSubmit";
 
 const ContactsPage = () => {
     const phone = <PhoneOutlinedIcon fontSize={"large"}/>
     const email = <EmailOutlinedIcon fontSize={"large"}/>
     const address = <LocationOnOutlinedIcon fontSize={"large"}/>
 
+    const {t} = useTranslation()
+
     return (
         <ContactsPageStyled>
-            <Title title={"Contacts"} span={"contacts"}/>
+            <Title title={t("contacts_page.title")} span={"contacts"}/>
             <div className={"contacts"}>
                 <div className="left-content">
-                    <h4 className={"contact-title"}>Get In Touch</h4>
+                    <h4 className={"contact-title"}>
+                        <Trans i18nKey={"contacts_page.subtitle"}>Get In Touch</Trans>
+                    </h4>
                     <form className={"form"} name="contact" method="POST" data-netlify={"true"}>
                         <input type="hidden" name={"form-name"} value={"contact"}/>
                         <div className={"form-field"}>
-                            <label htmlFor="name">Enter your name*</label>
+                            <label htmlFor="name">
+                                <Trans i18nKey={"contacts_page.form_labels.name"}>Enter your name*</Trans>
+                            </label>
                             <input type="text" name={"name"} id={"name"}/>
                         </div>
                         <div className={"form-field"}>
-                            <label htmlFor="email">Enter your email*</label>
+                            <label htmlFor="email">
+                                <Trans i18nKey={"contacts_page.form_labels.email"}>Enter your email*</Trans>
+                            </label>
                             <input type="email" name={"email"} id={"email"}/>
                         </div>
                         <div className={"form-field"}>
-                            <label htmlFor="subject">Enter your subject*</label>
+                            <label htmlFor="subject">
+                                <Trans i18nKey={"contacts_page.form_labels.subject"}>Enter your subject*</Trans>
+                            </label>
                             <input type="text" name={"subject"} id={"subject"}/>
                         </div>
                         <div className={"form-field"}>
-                            <label htmlFor="text-area">Enter your subject*</label>
+                            <label htmlFor="text-area">
+                                <Trans i18nKey={"contacts_page.form_labels.message"}>Enter your message*</Trans>
+                            </label>
                             <textarea name="message" id={"text-area"} cols={30} rows={10}/>
                         </div>
                         <div className={"form-field"}>
-                            <button type={"submit"}>send</button>
+                            <PrimaryButtonSubmit title={t("contacts_page.submit_btn")}/>
                         </div>
                     </form>
                 </div>
                 <div className="right-content">
-                    <ContactCard title={"Phone"}
+                    <ContactCard title={t("contacts_page.cont1.title")}
                                  icon={phone}
-                                 contact1={"+012-3456-7891"}
-                                 contact2={"+012-3456-7892"}/>
-                    <ContactCard title={"Email"} icon={email}
-                                 contact1={"admin.sitename@example.com"}
-                                 contact2={"info.sitename@example.com"}
+                                 contact1={"+7 923-317-54-39"}/>
+                    <ContactCard title={t("contacts_page.cont2.title")} icon={email}
+                                 contact1={"oantons@yandex.ru"}
+                                 contact2={"ooantonss@gmail.com"}
                     />
-                    <ContactCard title={"Address"}
+                    <ContactCard title={t("contacts_page.cont3.title")}
                                  icon={address}
-                                 contact1={"121 King Street, Melbourne, Victoria 3000, Australia"}
+                                 contact1={t("contacts_page.cont3.subtitle")}
                     />
                 </div>
             </div>
@@ -92,10 +104,11 @@ const ContactsPageStyled = styled.section`
           outline: none;
           background: transparent;
           border: 1px solid var(--border-color);
-          font-size: .74rem;
+          font-size: .94rem;
           height: 50px;
           padding: 0 15px;
           width: 100%;
+          color: var(--font-light-color)
         }
 
         label {
@@ -112,9 +125,10 @@ const ContactsPageStyled = styled.section`
           background: transparent;
           outline: none;
           border: 1px solid var(--border-color);
-          font-size: .74rem;
+          font-size: .94rem;
           padding: 10px 15px;
           width: 100%;
+          color: var(--font-light-color)
         }
 
         a {

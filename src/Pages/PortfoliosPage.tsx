@@ -16,7 +16,7 @@ const PortfoliosPage = () => {
                                                     link2={p.link2}
                                                     title={p.title}
                                                     text={p.text}
-                />)}
+                />).reverse()}
             </div>
         </PortfoliosPageStyled>
     );

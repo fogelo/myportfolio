@@ -37,7 +37,7 @@ i18n
         //     }
         // },
         detection: {
-            order: ["path", "cookie", "htmlTag", "localStorage", "subdomain"],
+            order: ["cookie", "htmlTag", "localStorage", "subdomain"],
             caches: ["cookie"]
         },
         backend: {

@@ -61,5 +61,26 @@
         }
       }
     }
+  },
+  "contacts_page": {
+    "title": "contacts",
+    "subtitle": "Get In Touch",
+    "form_labels": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "subject": "Enter your subject",
+      "message": "Enter your message"
+    },
+    "submit_btn": "send",
+    "cont1": {
+      "title": "Phone"
+    },
+    "cont2": {
+      "title": "Email"
+    },
+    "cont3": {
+      "title": "Address",
+      "subtitle": "Moscow, Russia"
+    }
   }
 }

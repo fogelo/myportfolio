@@ -12,6 +12,7 @@ import GlobeIcon from "../Components/icons/GlobeIcon";
 import i18next from "i18next";
 import cookies from "js-cookie"
 import ReactTypingEffect from 'react-typing-effect';
+import {Icon32LogoVk} from "@vkontakte/icons";
 
 const HomePage = () => {
     const {t} = useTranslation()
@@ -64,11 +65,6 @@ const HomePage = () => {
                 <Trans i18nKey={"home_page.title"}>
                     <h1>Hi I'm <br/><span>Orlov Anton</span></h1>
                 </Trans>
-                {/*<Trans i18nKey={"home_page.subtitle"}>*/}
-                {/*    <p>*/}
-                {/*        I'm a Front End Web developer*/}
-                {/*    </p>*/}
-                {/*</Trans>*/}
                 <p>
                     <ReactTypingEffect speed={100} typingDelay={1500}
                         text={[t("home_page.subtitle")]}
@@ -83,10 +79,10 @@ const HomePage = () => {
                        className="icon i-github">
                         <GitHubIcon/>
                     </a>
-                    {/*<a href={"https://vk.com/id715020392"}*/}
-                    {/*   className="icon i-vk">*/}
-                    {/*    <Icon32LogoVk/>*/}
-                    {/*</a>*/}
+                    <a href={"https://vk.com/id715020392"}
+                       className="icon i-vk">
+                        <Icon32LogoVk/>
+                    </a>
                     <a href={"https://www.codewars.com/users/orlovAnton"}
                        className="icon i-codewars">
                         <CodewarsIcon/>

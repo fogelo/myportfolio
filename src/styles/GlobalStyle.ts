@@ -151,8 +151,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: inherit;
     font-weight: 400;
     color: var(--white-color);
+    margin: 0;
+    padding: 0;
   }
-  
+
   p {
     font-size: 1.25rem;
     line-height: 2rem;
