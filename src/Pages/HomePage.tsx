@@ -12,7 +12,6 @@ import GlobeIcon from "../Components/icons/GlobeIcon";
 import i18next from "i18next";
 import cookies from "js-cookie"
 import ReactTypingEffect from 'react-typing-effect';
-import {Icon32LogoVk} from "@vkontakte/icons";
 
 const HomePage = () => {
     const {t} = useTranslation()
@@ -79,10 +78,10 @@ const HomePage = () => {
                        className="icon i-github">
                         <GitHubIcon/>
                     </a>
-                    <a href={"https://vk.com/id715020392"}
-                       className="icon i-vk">
-                        <Icon32LogoVk/>
-                    </a>
+                    {/*<a href={"https://vk.com/id715020392"}*/}
+                    {/*   className="icon i-vk">*/}
+                    {/*    <Icon32LogoVk/>*/}
+                    {/*</a>*/}
                     <a href={"https://www.codewars.com/users/orlovAnton"}
                        className="icon i-codewars">
                         <CodewarsIcon/>
