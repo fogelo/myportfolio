@@ -11,7 +11,7 @@ import "flag-icon-css/css/flag-icons.min.css"
 import GlobeIcon from "../Components/icons/GlobeIcon";
 import i18next from "i18next";
 import cookies from "js-cookie"
-import ReactTypingEffect from 'react-typing-effect';
+import ReactTypingEffect from "react-typing-effect";
 
 const HomePage = () => {
     const {t} = useTranslation()
@@ -64,11 +64,9 @@ const HomePage = () => {
                 <Trans i18nKey={"home_page.title"}>
                     <h1>Hi I'm <br/><span>Orlov Anton</span></h1>
                 </Trans>
-                <p>
-                    <ReactTypingEffect speed={100} typingDelay={1500}
-                        text={[t("home_page.subtitle")]}
-                    />
-                </p>
+                <ReactTypingEffect className={"subtitle"} speed={100} typingDelay={1500}
+                                   text={[t("home_page.subtitle")]}
+                />
                 <div className={"icons"}>
                     <a href={"https://t.me/ant_or"}
                        className="icon i-telegram">
@@ -142,6 +140,12 @@ const HomePageStyled = styled.header`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    .subtitle {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      color: var(--font-light-color);
+    }
 
     .icons {
       display: flex;

@@ -25,14 +25,13 @@ const PortfolioCard: FC<PortfolioCardPT> = (
         setIsLoading(false)
     }
 
-
     return (
         <PortfolioCardStyled>
             <div className={"image"}>
                 <img src={image} alt="" onLoad={onLoadImgHandler} hidden/>
                 {isLoading
                     ? <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} height={"100%"}/>
-                    : <img src={image} alt=""/>
+                    : <img src={image} alt="" onLoad={onLoadImgHandler} />
                 }
                 <div className={"front-card"}>
                     <div className={"links"}>
@@ -49,7 +48,7 @@ const PortfolioCard: FC<PortfolioCardPT> = (
             {
                 isLoading
                     ? <Skeleton className={`skeleton text`} width={"85%"}/>
-                    : <div className={"text"}>{text}</div>
+                    : <p className={"text"}>{text}</p>
             }
 
 

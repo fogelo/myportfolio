@@ -11,6 +11,7 @@ const PortfoliosPage = () => {
             <Title title={"PORTFOLIOS"} span={"PORTFOLIOS"}/>
             <div className={"portfolio-cards"}>
                 {portfolios.map(p => <PortfolioCard id={p.id}
+                                                    key={p.id}
                                                     category={p.category}
                                                     image={p.image}
                                                     link1={p.link1}

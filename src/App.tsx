@@ -13,10 +13,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import {IconButton, Switch} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import {animated, useTransition} from "react-spring";
-
-
-const PortfoliosPage = React.lazy(() => import("./Pages/PortfoliosPage"));
-
+import PortfoliosPage from "./Pages/PortfoliosPage";
 
 function App() {
 
