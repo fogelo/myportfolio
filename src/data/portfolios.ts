@@ -4,9 +4,9 @@ import react1 from "../img/portImages/react_styled.png";
 import img2 from "../img/portImages/maya-4.jpg";
 import img3 from "../img/portImages/maya-3.jpg";
 import todolist from "../img/portImages/todolistL.jpeg"
-import relvise from "../img/portImages/relvise.png"
+import relvise from "../img/portImages/relvise.jpeg"
 import social_network from "../img/portImages/social-network.png"
-import gipsolit from "../img/portImages/gipsolit.png"
+import gipsolit from "../img/portImages/gipsolit.jpeg"
 
 
 const portfolios = [

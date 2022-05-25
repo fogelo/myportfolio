@@ -24,18 +24,6 @@ i18n
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
-        // resources: {
-        //     en: {
-        //         translation: {
-        //             "home-page": "<0>Hi I'm <1>Orlov Anton</1></0>"
-        //         }
-        //     },
-        //     ru: {
-        //         translation: {
-        //             "home-page": "<0>Привет меня зовут <1>Антон</1></0>"
-        //         }
-        //     }
-        // },
         detection: {
             order: ["cookie", "htmlTag", "localStorage", "subdomain"],
             caches: ["cookie"]
@@ -51,13 +39,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <>
-        <Suspense fallback={<h1>Loading profile...</h1>}>
             <GlobalStyle/>
             <BrowserRouter>
                 <App/>
             </BrowserRouter>
-        </Suspense>
-
     </>
 );
 

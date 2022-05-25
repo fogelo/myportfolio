@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Title from "../Components/Title";
 import portfolios from "../data/portfolios";
 import PortfolioCard from "../Components/PortfolioCard";
 import styled from "styled-components";
 
 const PortfoliosPage = () => {
+
     return (
         <PortfoliosPageStyled>
             <Title title={"PORTFOLIOS"} span={"PORTFOLIOS"}/>
@@ -19,7 +20,8 @@ const PortfoliosPage = () => {
                 />).reverse()}
             </div>
         </PortfoliosPageStyled>
-    );
+    )
+        ;
 };
 
 const PortfoliosPageStyled = styled.div`

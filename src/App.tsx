@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, Suspense} from "react";
 import styled from "styled-components";
 import Sidebar from "./Components/Sidebar";
 import HomePage from "./Pages/HomePage";
 import {Routes, Route, useLocation} from "react-router-dom";
 import AboutPage from "./Pages/AboutPage";
 import ResumePage from "./Pages/ResumePage";
-import PortfoliosPage from "./Pages/PortfoliosPage";
+// import PortfoliosPage from "./Pages/PortfoliosPage";
 import BlogsPage from "./Pages/BlogsPage";
 import ContactsPage from "./Pages/ContactsPage";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -13,6 +13,9 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import {IconButton, Switch} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import {animated, useTransition} from "react-spring";
+
+
+const PortfoliosPage = React.lazy(() => import("./Pages/PortfoliosPage"));
 
 
 function App() {
@@ -39,8 +42,8 @@ function App() {
 
     const location = useLocation()
     const transitions = useTransition(location, {
-        from: { opacity: 0, transform: 'translateX(-50%)' },
-        enter: { opacity: 1, transform: 'translateX(0%)' },
+        from: {opacity: 0, transform: "translateX(-50%)"},
+        enter: {opacity: 1, transform: "translateX(0%)"},
     })
 
     return (
@@ -68,20 +71,22 @@ function App() {
                     <div className="lines-4"/>
                 </div>
 
-                {
-                    transitions((props, item) => (
-                        <animated.div style={props}>
-                            <Routes location={item}>
-                                <Route path={"/"} element={<HomePage/>}/>
-                                <Route path={"/about"} element={<AboutPage/>}/>
-                                <Route path={"/resume"} element={<ResumePage/>}/>
-                                <Route path={"/portfolios"} element={<PortfoliosPage/>}/>
-                                <Route path={"/blogs"} element={<BlogsPage/>}/>
-                                <Route path={"/contacts"} element={<ContactsPage/>}/>
-                            </Routes>
-                        </animated.div>
-                    ))
-                }
+                {/*{*/}
+                {/*    transitions((props, item) => (*/}
+                {/*        <animated.div style={props}>*/}
+                {/*            <Routes location={item}>*/}
+                    <Routes>
+                        <Route path={"/"} element={<HomePage/>}/>
+                        <Route path={"/about"} element={<AboutPage/>}/>
+                        <Route path={"/resume"} element={<ResumePage/>}/>
+                        <Route path={"/portfolios"} element={<PortfoliosPage/>}/>
+                        <Route path={"/blogs"} element={<BlogsPage/>}/>
+                        <Route path={"/contacts"} element={<ContactsPage/>}/>
+                    </Routes>
+                {/*</Routes>*/}
+                {/*        </animated.div>*/}
+                {/*    ))*/}
+                {/*}*/}
 
             </MainContentStyled>
         </AppStyled>

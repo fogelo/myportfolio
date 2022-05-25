@@ -37,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     --scrollbar-bg-color: #383838;
     --scrollbar-thump-color: #6b6b6b;
     --scrollbar-track-color: #383838;
+    --skeleton-color: rgba(0, 0, 0, 0.15);
   }
 
   .dark-theme {
@@ -56,6 +57,7 @@ const GlobalStyle = createGlobalStyle`
     --scrollbar-bg-color: #383838;
     --scrollbar-thump-color: #6b6b6b;
     --scrollbar-track-color: #383838;
+    --skeleton-color: rgba(161, 161, 161, 0.11);
   }
 
 

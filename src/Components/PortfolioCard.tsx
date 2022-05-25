@@ -1,6 +1,8 @@
-import React, {FC} from "react";
+import React, {FC, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import img3 from "../img/portImages/maya-3.jpg";
+import {Skeleton} from "@mui/material";
+import {port} from "../img/portImages/portfolio-data";
 
 type PortfolioCardPT = {
     id: number
@@ -17,10 +19,21 @@ const PortfolioCard: FC<PortfolioCardPT> = (
         id, category, image,
         link1, link2, title, text
     }) => {
+
+    const [isLoading, setIsLoading] = useState(true)
+    const onLoadImgHandler = () => {
+        setIsLoading(false)
+    }
+
+
     return (
         <PortfolioCardStyled>
             <div className={"image"}>
-                <img src={image} alt=""/>
+                <img src={image} alt="" onLoad={onLoadImgHandler} hidden/>
+                {isLoading
+                    ? <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} height={"100%"}/>
+                    : <img src={image} alt=""/>
+                }
                 <div className={"front-card"}>
                     <div className={"links"}>
                         <a className={"link"} href={link1}>view demo</a>
@@ -28,25 +41,38 @@ const PortfolioCard: FC<PortfolioCardPT> = (
                     </div>
                 </div>
             </div>
-            <h4 className={"title"}>{title}</h4>
-            <p className={"text"}>{text}</p>
+            {
+                isLoading
+                    ? <Skeleton className={`skeleton title`} width={"70%"}/>
+                    : <h4 className={"title"}>{title}</h4>
+            }
+            {
+                isLoading
+                    ? <Skeleton className={`skeleton text`} width={"85%"}/>
+                    : <div className={"text"}>{text}</div>
+            }
+
+
         </PortfolioCardStyled>
+
     );
 };
 
 const PortfolioCardStyled = styled.div`
-
+  .skeleton {
+    background-color: var(--skeleton-color);
+  }
 
   .image {
+    aspect-ratio: 1280/720;
     position: relative;
-    width: 100%;
-    margin-bottom: 5px;
-
+    margin-bottom: 15px;
     box-shadow: 0 0 10px 5px rgb(88, 88, 88);
 
     img {
       width: 100%;
     }
+
 
     .front-card {
       position: absolute;
@@ -87,7 +113,6 @@ const PortfolioCardStyled = styled.div`
         }
       }
     }
-
   }
 
   .title {
@@ -98,9 +123,8 @@ const PortfolioCardStyled = styled.div`
 
   .text {
     font-size: 1rem;
+    color: var(--font-light-color);
   }
-
-
 `
 
 export default PortfolioCard;
