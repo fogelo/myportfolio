@@ -3,7 +3,6 @@ import styled from "styled-components";
 import img3 from "../img/portImages/maya-3.jpg";
 import {Skeleton} from "@mui/material";
 import {port} from "../img/portImages/portfolio-data";
-import useOnScreen from "../hooks/useOnScreen";
 import {useInView} from "react-intersection-observer";
 
 type PortfolioCardPT = {

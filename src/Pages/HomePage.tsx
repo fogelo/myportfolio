@@ -4,6 +4,7 @@ import styled from "styled-components";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CodewarsIcon from "../Components/icons/CodewarsIcon";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Trans, useTranslation} from "react-i18next";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -75,6 +76,10 @@ const HomePage = () => {
                     <a href={"https://github.com/fogelo"}
                        className="icon i-github">
                         <GitHubIcon/>
+                    </a>
+                    <a href={"https://www.linkedin.com/in/anton-orlov-375953229/"}
+                       className="icon i-linkedIn">
+                        <LinkedInIcon sx={{fontSize: "27px"}}/>
                     </a>
                     {/*<a href={"https://vk.com/id715020392"}*/}
                     {/*   className="icon i-vk">*/}
@@ -177,6 +182,10 @@ const HomePageStyled = styled.header`
         border: 2px solid #5F4687;
         color: #5F4687;
       }
+      //.i-linkedIn:hover {
+      //  border: 2px solid rgb(10, 102, 194);
+      //  color: rgb(10, 102, 194);
+      //}
 
       .i-codewars {
         svg {

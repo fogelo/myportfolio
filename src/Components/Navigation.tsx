@@ -3,15 +3,21 @@ import styled from "styled-components";
 import avatar from "../img/my-avatar.jpeg"
 import {NavLink} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {Skeleton} from "@mui/material";
 
 const Navigation = () => {
     const {t} = useTranslation()
 
+    const [isLoading, setIsLoading] = useState(true)
+    const onLoadImgHandler = () => {
+        setIsLoading(false)
+    }
     return (
         <NavigationStyled>
             <div className={"avatar"}>
                 <div className={"avatar-container"}>
-                    <img src={avatar} alt="" className={"photo"}/>
+                    <img src={avatar} alt="" className={"photo"} onLoad={onLoadImgHandler} hidden={isLoading}/>
+                    <Skeleton className={"skeleton"} variant="rectangular" width={"70%"} hidden={!isLoading} height={"70%"}/>
                 </div>
             </div>
             <ul className={"nav-items"}>
@@ -89,6 +95,10 @@ const NavigationStyled = styled.nav`
 
       .skeleton {
         background-color: var(--skeleton-color);
+        aspect-ratio: 225/225;
+        width: 70%;
+        border-radius: 50%;
+        border: 8px solid var(--border-color);
       }
     }
 

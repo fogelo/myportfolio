@@ -10,13 +10,13 @@
   },
   "home_page": {
     "title": "<0>Hi I'm <2>Orlov Anton</2></0>",
-    "subtitle": "I'm a Front End Web developer"
+    "subtitle": "I'm a Frontend developer"
   },
   "about_page": {
     "image_section": {
       "title": "about me",
       "subtitle": "<0>I am <1>Orlov Anton</1></0>",
-      "paragraph": "<0>I'm a Front End Web developer with of experience in Javascript, Typescript, React, Redux, REST API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next etc.</0>"
+      "paragraph": "<0>I'm a Frontend developer with of experience in Javascript, Typescript, React, Redux, REST API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next etc.</0>"
     },
     "services_section": {
       "title": "services"

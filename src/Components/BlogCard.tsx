@@ -1,6 +1,7 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import styled from "styled-components";
 import {Skeleton} from "@mui/material";
+import {useInView} from "react-intersection-observer";
 
 type BlogCardPT = {
     id: number
@@ -13,25 +14,29 @@ type BlogCardPT = {
 
 const BlogCard: FC<BlogCardPT> = ({id, title, date, month, image}) => {
     const [isLoading, setIsLoading] = useState(true)
-    const onLoadImgHandler = () => {
-        // setIsLoading(false)
-    }
 
+    const {ref, inView, entry} = useInView();
+    const onLoadImgHandler = () => {
+        setIsLoading(false)
+    }
+    useEffect(() => {
+        if (!inView) {
+            setIsLoading(true)
+        }
+    }, [inView])
     return (
         <BlogCardStyled>
-            <div className={"image"}>
-                <img src={image} alt="" onLoad={onLoadImgHandler} hidden/>
-                {isLoading
-                    ? <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} height={"100%"}/>
-                    : <img src={image} alt="" onLoad={onLoadImgHandler}/>
+            <div ref={ref} className={"image"}>
+                {
+                    inView && <img src={image} alt="" onLoad={onLoadImgHandler} hidden={isLoading}/>
                 }
+                <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} height={"100%"}
+                          hidden={!isLoading}/>
             </div>
-            {
-                isLoading
-                    ? <Skeleton className={`skeleton title`} width={"70%"}/>
-                    : <p className={"title"}>{title}</p>
-            }
-            <div className="date">
+            <p className={"title"} hidden={isLoading}>{title}</p>
+            <Skeleton className={`skeleton title`} width={"70%"} hidden={!isLoading}/>
+
+            <div className="date" hidden={isLoading}>
                 <p className={"day"}>{date}</p>
                 <p className={"month"}>{month}</p>
             </div>

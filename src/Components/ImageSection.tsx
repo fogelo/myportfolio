@@ -1,17 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import aboutPhoto from "../img/me.jpeg"
 import PrimaryButton from "./PrimaryButton";
 import {Trans} from "react-i18next";
 import Tilt from "react-parallax-tilt";
+import {Skeleton} from "@mui/material";
 
 const ImageSection = () => {
+    const [isLoading, setIsLoading] = useState(true)
+    const onLoadImgHandler = () => {
+        setIsLoading(false)
+    }
     return (
         <ImageSectionStyled>
             <div className={"left-content"}>
                 <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
-                    <img src={aboutPhoto} alt="about"/>
+                    <img src={aboutPhoto} alt="about" onLoad={onLoadImgHandler} hidden={isLoading}/>
+                    <Skeleton className={"skeleton"}
+                              variant="rectangular"
+                              width={"80%"}
+                              height={"80%"}
+                              hidden={!isLoading}/>
                 </Tilt>
+
             </div>
             <div className={"right-content"}>
                 <Trans i18nKey={"about_page.image_section.subtitle"}>
@@ -19,7 +30,7 @@ const ImageSection = () => {
                 </Trans>
                 <Trans i18nKey={"about_page.image_section.paragraph"}>
                     <p className={"paragraph"}>
-                        I'm a Front End Web developer with of experience in Javascript, Typescript, React, Redux, REST
+                        I'm a Frontend developer with of experience in Javascript, Typescript, React, Redux, REST
                         API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next etc.
                     </p>
                 </Trans>
@@ -48,6 +59,12 @@ const ImageSectionStyled = styled.section`
   .left-content {
     width: 100%;
     text-align: center;
+
+    .skeleton {
+      aspect-ratio: 1232/1280;
+      background-color: var(--skeleton-color);
+      margin: 0 auto;
+    }
 
     img {
       width: 80%;

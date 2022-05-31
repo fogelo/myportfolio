@@ -10,13 +10,13 @@
   },
   "home_page": {
     "title": "<0>Привет, меня зовут <1/><2>Орлов Антон</2></0>",
-    "subtitle": "Я Front End Web разработчик"
+    "subtitle": "Я Frontend разработчик"
   },
   "about_page": {
     "image_section": {
       "title": "обо мне",
       "subtitle": "<0>Меня зовут <1>Орлов Антон</1></0>",
-      "paragraph": "<0>Я Front End разработчик. Подхожу с большим интересом к обучению и разработке приложений. Есть опыт работы с Javascript, Typescript, React, Redux, REST API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next и т. д.</0>"
+      "paragraph": "<0>Я Frontend разработчик. Подхожу с большим интересом к обучению и разработке приложений. Есть опыт работы с Javascript, Typescript, React, Redux, REST API, Unit Tests (Jest), Saas, Styled Components, Material UI, i18next и т. д.</0>"
     },
     "services_section": {
       "title": "услуги"
