@@ -1,5 +1,6 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 import styled from "styled-components";
+import {Skeleton} from "@mui/material";
 
 type BlogCardPT = {
     id: number
@@ -9,16 +10,30 @@ type BlogCardPT = {
     image: string
 }
 
+
 const BlogCard: FC<BlogCardPT> = ({id, title, date, month, image}) => {
+    const [isLoading, setIsLoading] = useState(true)
+    const onLoadImgHandler = () => {
+        // setIsLoading(false)
+    }
+
     return (
         <BlogCardStyled>
             <div className={"image"}>
-                <img src={image} alt=""/>
+                <img src={image} alt="" onLoad={onLoadImgHandler} hidden/>
+                {isLoading
+                    ? <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} height={"100%"}/>
+                    : <img src={image} alt="" onLoad={onLoadImgHandler}/>
+                }
             </div>
-            <p className={"title"}>{title}</p>
+            {
+                isLoading
+                    ? <Skeleton className={`skeleton title`} width={"70%"}/>
+                    : <p className={"title"}>{title}</p>
+            }
             <div className="date">
                 <p className={"day"}>{date}</p>
-                <p className={month}>{month}</p>
+                <p className={"month"}>{month}</p>
             </div>
         </BlogCardStyled>
     );
@@ -29,21 +44,19 @@ const BlogCardStyled = styled.div`
   background-color: var(--background-dark-color-2);
   position: relative;
 
+  .skeleton {
+    background-color: var(--skeleton-color);
+  }
+
   .image {
-    width: 100%;
-    overflow: hidden;
+    aspect-ratio: 285/190;
+    position: relative;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px 5px rgb(88, 88, 88);
 
     img {
       width: 100%;
-      object-fit: cover;
-      transition: all .4s ease-in-out;
-
-      &:hover {
-        transform: scale(1.07);
-      }
     }
-
-
   }
 
   .title {
@@ -56,7 +69,6 @@ const BlogCardStyled = styled.div`
     top: 40px;
     left: 40px;
     background-color: var(--primary-color);
-    color: var(--white-color);
     opacity: .8;
     padding: 5px;
     min-height: 80px;
@@ -69,12 +81,14 @@ const BlogCardStyled = styled.div`
       font-size: 2rem;
       font-weight: 700;
       line-height: 1;
+      color: var(--white-color);
     }
 
     .month {
       font-size: 1.3rem;
       font-weight: 700;
       line-height: 1;
+      color: var(--white-color);
     }
   }
 `

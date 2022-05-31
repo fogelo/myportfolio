@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import avatar from "../img/my-avatar.jpeg"
 import {NavLink} from "react-router-dom";
@@ -6,10 +6,13 @@ import {useTranslation} from "react-i18next";
 
 const Navigation = () => {
     const {t} = useTranslation()
+
     return (
         <NavigationStyled>
             <div className={"avatar"}>
-                <img src={avatar} alt=""/>
+                <div className={"avatar-container"}>
+                    <img src={avatar} alt="" className={"photo"}/>
+                </div>
             </div>
             <ul className={"nav-items"}>
                 <li className={"nav-item"}>
@@ -65,13 +68,30 @@ const NavigationStyled = styled.nav`
     border-bottom: 1px solid var(--border-color);
     text-align: center;
     padding: 1rem 0;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    img {
-      width: 70%;
-      border-radius: 50%;
-      border: 8px solid var(--border-color);
+    .avatar-container {
+      width: 225px;
+      height: 225px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+      .photo {
+        aspect-ratio: 225/225;
+        width: 70%;
+        border-radius: 50%;
+        border: 8px solid var(--border-color);
+      }
+
+      .skeleton {
+        background-color: var(--skeleton-color);
+      }
     }
+
   }
 
   .nav-items {

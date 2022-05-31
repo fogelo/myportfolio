@@ -17,7 +17,7 @@ import PortfoliosPage from "./Pages/PortfoliosPage";
 
 function App() {
 
-    const [theme, setTheme] = useState<"dark-theme" | "light-theme">("dark-theme")
+    const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "dark-theme")
     const [open, setOpen] = useState(false)
 
     const toggleDrawer = (event?: React.KeyboardEvent | React.MouseEvent) => {
@@ -43,6 +43,10 @@ function App() {
         enter: {opacity: 1, transform: "translateX(0%)"},
     })
 
+    const onChangeTheme = () => {
+        setTheme(theme === "dark-theme" ? "light-theme" : "dark-theme")
+        localStorage.setItem("theme", theme === "dark-theme" ? "light-theme" : "dark-theme")
+    }
     return (
         <AppStyled>
 
@@ -50,7 +54,7 @@ function App() {
                 {theme === "dark-theme"
                     ? <LightModeOutlinedIcon sx={{color: "white"}}/>
                     : <LightModeIcon/>}
-                <Switch onChange={() => setTheme(theme === "dark-theme" ? "light-theme" : "dark-theme")}
+                <Switch onChange={onChangeTheme}
                         color="default"
                 />
             </div>
@@ -72,14 +76,14 @@ function App() {
                 {/*    transitions((props, item) => (*/}
                 {/*        <animated.div style={props}>*/}
                 {/*            <Routes location={item}>*/}
-                    <Routes>
-                        <Route path={"/"} element={<HomePage/>}/>
-                        <Route path={"/about"} element={<AboutPage/>}/>
-                        <Route path={"/resume"} element={<ResumePage/>}/>
-                        <Route path={"/portfolios"} element={<PortfoliosPage/>}/>
-                        <Route path={"/blogs"} element={<BlogsPage/>}/>
-                        <Route path={"/contacts"} element={<ContactsPage/>}/>
-                    </Routes>
+                <Routes>
+                    <Route path={"/"} element={<HomePage/>}/>
+                    <Route path={"/about"} element={<AboutPage/>}/>
+                    <Route path={"/resume"} element={<ResumePage/>}/>
+                    <Route path={"/portfolios"} element={<PortfoliosPage/>}/>
+                    <Route path={"/blogs"} element={<BlogsPage/>}/>
+                    <Route path={"/contacts"} element={<ContactsPage/>}/>
+                </Routes>
                 {/*</Routes>*/}
                 {/*        </animated.div>*/}
                 {/*    ))*/}

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import img3 from "../img/portImages/maya-3.jpg";
 import {Skeleton} from "@mui/material";
 import {port} from "../img/portImages/portfolio-data";
+import useOnScreen from "../hooks/useOnScreen";
+import {useInView} from "react-intersection-observer";
 
 type PortfolioCardPT = {
     id: number
@@ -25,35 +27,36 @@ const PortfolioCard: FC<PortfolioCardPT> = (
         setIsLoading(false)
     }
 
+    const {ref, inView, entry} = useInView();
+
+    useEffect(() => {
+        if (!inView) {
+            setIsLoading(true)
+        }
+    }, [inView])
     return (
         <PortfolioCardStyled>
-            <div className={"image"}>
-                <img src={image} alt="" onLoad={onLoadImgHandler} hidden/>
-                {isLoading
-                    ? <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} height={"100%"}/>
-                    : <img src={image} alt="" onLoad={onLoadImgHandler} />
-                }
-                <div className={"front-card"}>
-                    <div className={"links"}>
-                        <a className={"link"} href={link1}>view demo</a>
-                        <a className={"link"} href={link2}>view code</a>
+            <div className={"portfolio-card"}>
+                <div ref={ref} className={"image"}>
+                    {
+                        inView && <img src={image} alt="" onLoad={onLoadImgHandler} hidden={isLoading}/>
+
+                    }
+                    <Skeleton className={"skeleton"} variant="rectangular" width={"100%"} hidden={!isLoading}
+                              height={"100%"}/>
+                    <div className={"front-card"}>
+                        <div className={"links"}>
+                            <a className={"link"} href={link1}>view demo</a>
+                            <a className={"link"} href={link2}>view code</a>
+                        </div>
                     </div>
                 </div>
+                <h4 className={"title"} hidden={isLoading}>{title}</h4>
+                <p className={"text"} hidden={isLoading}>{text}</p>
+                <Skeleton className={`skeleton title`} width={"70%"} hidden={!isLoading}/>
+                <Skeleton className={`skeleton text`} width={"85%"} hidden={!isLoading}/>
             </div>
-            {
-                isLoading
-                    ? <Skeleton className={`skeleton title`} width={"70%"}/>
-                    : <h4 className={"title"}>{title}</h4>
-            }
-            {
-                isLoading
-                    ? <Skeleton className={`skeleton text`} width={"85%"}/>
-                    : <p className={"text"}>{text}</p>
-            }
-
-
         </PortfolioCardStyled>
-
     );
 };
 
