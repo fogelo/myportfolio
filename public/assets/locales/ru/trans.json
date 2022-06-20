@@ -40,6 +40,21 @@
           "position": "Инженер",
           "company": "РУСАЛ",
           "description": "Математическое моделирование теплофизических процессов."
+        },
+        "exp3": {
+          "position": "Flash cards",
+          "company": "",
+          "description": "Стек технологий: TypeScript, React, Redux, Rest API, Redux-thunk, React-router-dom, Axios, Material\nUI, SCSS, styled components, Git; Team development; Bug fixing, deploying."
+        },
+        "exp4": {
+          "position": "Todolist",
+          "company": "",
+          "description": "Стек технологий: TypeScript, React, Redux, Rest API, Redux-thunk, React-router-dom, Axios, SCSS\nMaterial UI, Formik, Unit-tests(jest), Storybook, Git; Bug fixing, deploying."
+        },
+        "exp5": {
+          "position": "Social network",
+          "company": "",
+          "description": "Стек технологий: TypeScript, React, Redux,"
         }
       },
       "education": {
@@ -52,12 +67,17 @@
         "educ2": {
           "degree": "Магистратура",
           "university": "СФУ, Институт инженерной физики и радиоэлектроники",
-          "description": "В 2014 получил степень магистра по направлению подготовки \"Ядерная энергетика и теплофизика\""
+          "description": "В 2014 получил степень магистра по направлению подготовки \"Ядерная энергетика и теплофизика\"."
         },
         "educ3": {
           "degree": "Аспирантура",
           "university": "СФУ, Институт инженерной физики и радиоэлектроники",
           "description": "Освоил программу подготовки научно‐педагогических кадров в аспирантуре по направлению подготовки \"Физика и астрономия\". В 2018 году присвоена квалификация преподаватель‐исследователь."
+        },
+        "educ4": {
+          "degree": "IT-Incubator",
+          "university": "",
+          "description": "React, Redux, Typescript, REST, Git."
         }
       }
     }

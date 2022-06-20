@@ -149,7 +149,7 @@ const MainContentStyled = styled.main`
     min-height: 100%;
     display: flex;
     justify-content: space-evenly;
-    z-index: 0;
+    z-index: -1000;
 
     .lines-1, .lines-2, .lines-3, .lines-4 {
       width: 1px;

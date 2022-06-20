@@ -41,11 +41,11 @@ const Navigation = () => {
                         {t("sidebar.portfolio")}
                     </NavLink>
                 </li>
-                <li className={"nav-item"}>
-                    <NavLink to={"/blogs"} className={({isActive}) => isActive ? "active-link" : ""}>
-                        {t("sidebar.blog")}
-                    </NavLink>
-                </li>
+                {/*<li className={"nav-item"}>*/}
+                {/*    <NavLink to={"/blogs"} className={({isActive}) => isActive ? "active-link" : ""}>*/}
+                {/*        {t("sidebar.blog")}*/}
+                {/*    </NavLink>*/}
+                {/*</li>*/}
                 <li className={"nav-item"}>
                     <NavLink to={"/contacts"} className={({isActive}) => isActive ? "active-link" : ""}>
                         {t("sidebar.contacts")}

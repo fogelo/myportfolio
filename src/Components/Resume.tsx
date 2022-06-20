@@ -16,34 +16,60 @@ const Resume = () => {
         <InnerLayout>
             <ResumeStyled>
                 <SmallTitle icon={work} title={t("resume_page.resume.experience.title")}/>
+                <h4 className={"work-sub-title"}>My projects (part-time)</h4>
                 <div className={"resume-block"}>
-                    <ResumeCard years={"2014 - 2016"}
-                                title={t("resume_page.resume.experience.exp1.position")}
-                                subTitle={t("resume_page.resume.experience.exp1.company")}
-                                description={t("resume_page.resume.experience.exp1.description")}
+                    <ResumeCard years={"2022"}
+                                title={t("resume_page.resume.experience.exp3.position")}
+                                subTitle={t("resume_page.resume.experience.exp3.company")}
+                                description={t("resume_page.resume.experience.exp3.description")}
                     />
+                    <ResumeCard years={"2021 - 2022"}
+                                title={t("resume_page.resume.experience.exp4.position")}
+                                subTitle={t("resume_page.resume.experience.exp4.company")}
+                                description={t("resume_page.resume.experience.exp4.description")}
+                    />
+                    <ResumeCard years={"2020 - 2021"}
+                                title={t("resume_page.resume.experience.exp5.position")}
+                                subTitle={t("resume_page.resume.experience.exp5.company")}
+                                description={t("resume_page.resume.experience.exp5.description")}
+                    />
+                </div>
+                <h4 className={"work-sub-title"}>My work (full-time)</h4>
+                <div className={"resume-block"}>
                     <ResumeCard years={"2016 - 2021"}
                                 title={t("resume_page.resume.experience.exp2.position")}
                                 subTitle={t("resume_page.resume.experience.exp2.company")}
                                 description={t("resume_page.resume.experience.exp2.description")}
                     />
+                    <ResumeCard years={"2014 - 2016"}
+                                title={t("resume_page.resume.experience.exp1.position")}
+                                subTitle={t("resume_page.resume.experience.exp1.company")}
+                                description={t("resume_page.resume.experience.exp1.description")}
+                    />
                 </div>
-                <SmallTitle icon={education} title={t("resume_page.resume.education.title")}/>
+                <div className={"space"}>
+                    <SmallTitle icon={education} title={t("resume_page.resume.education.title")}/>
+                </div>
                 <div className={"resume-block"}>
-                    <ResumeCard years={"2008 - 2012"}
-                                title={t("resume_page.resume.education.educ1.degree")}
-                                subTitle={t("resume_page.resume.education.educ1.university")}
-                                description={t("resume_page.resume.education.educ1.description")}
+                    <ResumeCard years={"2021"}
+                                title={t("resume_page.resume.education.educ4.degree")}
+                                subTitle={t("resume_page.resume.education.educ4.university")}
+                                description={t("resume_page.resume.education.educ4.description")}
+                    />
+                    <ResumeCard years={"2014 - 2018"}
+                                title={t("resume_page.resume.education.educ3.degree")}
+                                subTitle={t("resume_page.resume.education.educ3.university")}
+                                description={t("resume_page.resume.education.educ3.description")}
                     />
                     <ResumeCard years={"2012 - 2014"}
                                 title={t("resume_page.resume.education.educ2.degree")}
                                 subTitle={t("resume_page.resume.education.educ2.university")}
                                 description={t("resume_page.resume.education.educ2.description")}
                     />
-                    <ResumeCard years={"2014 - 2018"}
-                                title={t("resume_page.resume.education.educ3.degree")}
-                                subTitle={t("resume_page.resume.education.educ3.university")}
-                                description={t("resume_page.resume.education.educ3.description")}
+                    <ResumeCard years={"2008 - 2012"}
+                                title={t("resume_page.resume.education.educ1.degree")}
+                                subTitle={t("resume_page.resume.education.educ1.university")}
+                                description={t("resume_page.resume.education.educ1.description")}
                     />
                 </div>
             </ResumeStyled>
@@ -54,8 +80,19 @@ const Resume = () => {
 
 const ResumeStyled = styled.div`
   .resume-block {
-    border-left: 2px solid var(--font-light-color);;
-    margin: 50px 0;
+    border-left: 2px solid var(--font-light-color);
+  }
+
+
+  .work-sub-title {
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 30px 0;
+  }
+
+  .space {
+    margin: 30px 0;
   }
 
 `

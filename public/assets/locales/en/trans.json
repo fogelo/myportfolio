@@ -34,12 +34,27 @@
         "exp1": {
           "position": "Junior researcher",
           "company": "Siberian Federal University",
-          "description": "Modeling of heat transfer processes, computational gas and hydrodynamics, multiphase flows, stress‐strain state calculations."
+          "description": "Mathematical modeling of thermophysical processes."
         },
         "exp2": {
           "position": "Engineer",
           "company": "RUSAL",
-          "description": "Mathematical modeling of thermophysical processes"
+          "description": "Modeling of heat transfer processes, computational gas and hydrodynamics, multiphase flows, stress‐strain state calculations."
+        },
+        "exp3": {
+          "position": "Flash cards",
+          "company": "",
+          "description": "Stack: TypeScript, React, Redux, Rest API, Redux-thunk, React-router-dom, Axios, Material\nUI, SCSS, styled components, Git; Team development; Bug fixing, deploying."
+        },
+        "exp4": {
+          "position": "Todolist",
+          "company": "",
+          "description": "Stack: TypeScript, React, Redux, Rest API, Redux-thunk, React-router-dom, Axios, SCSS\nMaterial UI, Formik, Unit-tests(jest), Storybook, Git; Bug fixing, deploying."
+        },
+        "exp5": {
+          "position": "Social network",
+          "company": "",
+          "description": "Stack: TypeScript, React, Redux,"
         }
       },
       "education": {
@@ -47,17 +62,22 @@
         "educ1": {
           "degree": "Bachelor's degree",
           "university": "SFU, Institute of engineering physics and radio electronics",
-          "description": "In 2012, I received a bachelor's degree in Engineering and Technology in the direction of \"Technical Physics\""
+          "description": "In 2012, I received a bachelor's degree in Engineering and Technology in the direction of \"Technical Physics\"."
         },
         "educ2": {
           "degree": "Master's degree",
           "university": "SFU, Institute of engineering physics and radio electronics",
-          "description": "In 2014, I received a master's degree in the field of training \"Nuclear power engineering and Thermophysics\""
+          "description": "In 2014, I received a master's degree in the field of training \"Nuclear power engineering and Thermophysics\"."
         },
         "educ3": {
           "degree": "Postgraduate studies",
           "university": "SFU, Institute of engineering physics and radio electronics",
           "description": "I have mastered the program of training scientific and pedagogical personnel in postgraduate studies in the field of \"Physics and Astronomy\". In 2018, i was awarded the qualification of a teacher‐researcher."
+        },
+        "educ4": {
+          "degree": "IT-Incubator",
+          "university": "",
+          "description": "React, Redux, Typescript, REST, Git."
         }
       }
     }

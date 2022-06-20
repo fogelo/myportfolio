@@ -13,8 +13,8 @@ const AboutPage = () => {
             <AboutPageStyled>
                 <Title title={t("about_page.image_section.title")} span={t("about_page.image_section.title")}/>
                 <ImageSection/>
-                <ServicesSection/>
-                <ReviewsSection/>
+                {/*<ServicesSection/>*/}
+                {/*<ReviewsSection/>*/}
             </AboutPageStyled>
     );
 };

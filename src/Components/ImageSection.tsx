@@ -35,7 +35,7 @@ const ImageSection = () => {
                     </p>
                 </Trans>
                 <div className={"download-cv-btn"}>
-                    <PrimaryButton title={"Download CV"} download href={"assets/cv/Orlov Anton.pdf"}/>
+                    <PrimaryButton title={"Download CV"} download href={"assets/cv/anton orlov.pdf"}/>
                 </div>
             </div>
         </ImageSectionStyled>

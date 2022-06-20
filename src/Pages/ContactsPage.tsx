@@ -7,6 +7,10 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import {Trans, useTranslation} from "react-i18next";
 import PrimaryButtonSubmit from "../Components/PrimaryButtonSubmit";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import CodewarsIcon from "../Components/icons/CodewarsIcon";
 
 const ContactsPage = () => {
     const phone = <PhoneOutlinedIcon fontSize={"large"}/>
@@ -67,6 +71,28 @@ const ContactsPage = () => {
                                  contact1={t("contacts_page.cont3.subtitle")}
                     />
                 </div>
+            </div>
+            <div className={"icons"}>
+                <a href={"https://t.me/ant_or"}
+                   className="icon i-telegram">
+                    <TelegramIcon/>
+                </a>
+                <a href={"https://github.com/fogelo"}
+                   className="icon i-github">
+                    <GitHubIcon/>
+                </a>
+                <a href={"https://www.linkedin.com/in/anton-orlov-375953229/"}
+                   className="icon i-linkedIn">
+                    <LinkedInIcon sx={{fontSize: "27px"}}/>
+                </a>
+                {/*<a href={"https://vk.com/id715020392"}*/}
+                {/*   className="icon i-vk">*/}
+                {/*    <Icon32LogoVk/>*/}
+                {/*</a>*/}
+                <a href={"https://www.codewars.com/users/orlovAnton"}
+                   className="icon i-codewars">
+                    <CodewarsIcon/>
+                </a>
             </div>
         </ContactsPageStyled>
     );
@@ -142,6 +168,59 @@ const ContactsPageStyled = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    .icon {
+      border: 2px solid var(--border-color);
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      color: var(--font-light-color);
+
+
+      &:hover {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+
+    .i-github:hover {
+      border: 2px solid #5F4687;
+      color: #5F4687;
+    }
+    //.i-linkedIn:hover {
+    //  border: 2px solid rgb(10, 102, 194);
+    //  color: rgb(10, 102, 194);
+    //}
+
+    .i-codewars {
+      svg {
+        color: var(--font-light-color);
+        fill: var(--font-light-color);
+      }
+    }
+
+    .i-codewars:hover {
+      border: 2px solid #A33F29;
+
+      svg {
+        color: #A33F29;
+        fill: #A33F29;
+      }
+    }
   }
 `
 

@@ -102,7 +102,7 @@ const PortfolioCardStyled = styled.div`
           color: white;
           font-size: 1.5rem;
           height: 50px;
-          width: 150px;
+          width: 130px;
           display: flex;
           justify-content: center;
           align-items: center;

@@ -2,7 +2,7 @@ import React, {FC, ReactNode} from "react";
 import styled from "styled-components";
 
 type SmallTitlePT = {
-    icon: ReactNode | string
+    icon?: ReactNode | string
     title: string
 }
 
